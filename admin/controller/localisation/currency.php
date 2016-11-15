@@ -312,10 +312,12 @@ class ControllerLocalisationCurrency extends Controller {
 		$data['entry_symbol_left'] = $this->language->get('entry_symbol_left');
 		$data['entry_symbol_right'] = $this->language->get('entry_symbol_right');
 		$data['entry_decimal_place'] = $this->language->get('entry_decimal_place');
+		$data['entry_round'] = $this->language->get('entry_round');
 		$data['entry_status'] = $this->language->get('entry_status');
 
 		$data['help_code'] = $this->language->get('help_code');
 		$data['help_value'] = $this->language->get('help_value');
+		$data['help_round'] = $this->language->get('help_round');
 
 		$data['button_save'] = $this->language->get('button_save');
 		$data['button_cancel'] = $this->language->get('button_cancel');
@@ -416,6 +418,14 @@ class ControllerLocalisationCurrency extends Controller {
 			$data['decimal_place'] = $currency_info['decimal_place'];
 		} else {
 			$data['decimal_place'] = '';
+		}
+		
+		if (isset($this->request->post['round'])) {
+			$data['round'] = $this->request->post['round'];
+		} elseif (!empty($currency_info)) {
+			$data['round'] = $currency_info['round'];
+		} else {
+			$data['round'] = 0;
 		}
 
 		if (isset($this->request->post['value'])) {

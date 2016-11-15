@@ -61,6 +61,20 @@
               <input type="text" name="decimal_place" value="<?php echo $decimal_place; ?>" placeholder="<?php echo $entry_decimal_place; ?>" id="input-decimal-place" class="form-control" />
             </div>
           </div>
+		  <div class="form-group">
+            <label class="col-sm-2 control-label"><span data-toggle="tooltip" title="<?php echo $help_round; ?>"><?php echo $entry_round; ?></span></label>
+            <div class="col-sm-10">
+				<div class="checkbox">
+                    <label>
+                      <?php if ($round) { ?>
+                      <input type="checkbox" name="round" value="1" checked="checked" />
+                      <?php } else { ?>
+                      <input type="checkbox" name="round" value="1" />
+                      <?php } ?>
+                      &nbsp; </label>
+                </div>
+            </div>
+          </div>
           <div class="form-group">
             <label class="col-sm-2 control-label" for="input-value"><span data-toggle="tooltip" title="<?php echo $help_value; ?>"><?php echo $entry_value; ?></span></label>
             <div class="col-sm-10">

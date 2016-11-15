@@ -132,7 +132,7 @@ class ControllerCommonHeader extends Controller {
 				);
 			}
 		}
-
-		return $this->load->view('common/header.tpl', $data);
+		
+		return view('common/header', $data);
 	}
 }

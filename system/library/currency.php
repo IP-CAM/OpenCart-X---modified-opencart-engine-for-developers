@@ -19,6 +19,7 @@ class Currency {
 				'symbol_left'   => $result['symbol_left'],
 				'symbol_right'  => $result['symbol_right'],
 				'decimal_place' => $result['decimal_place'],
+				'round'			=> $result['round'],
 				'value'         => $result['value']
 			);
 		}
@@ -87,6 +88,12 @@ class Currency {
 			$thousand_point = $this->language->get('thousand_point');
 		} else {
 			$thousand_point = '';
+		}
+		
+		// rounding
+		if($this->currencies[$currency]['round']) {
+			$tmp = intval($value);
+			if($value == $tmp) $decimal_place = 0;
 		}
 
 		$string .= number_format(round($value, (int)$decimal_place), (int)$decimal_place, $decimal_point, $thousand_point);

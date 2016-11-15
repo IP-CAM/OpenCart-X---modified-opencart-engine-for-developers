@@ -1,1 +1,2 @@
 2016-11-15 14:39:52 - PHP Notice:  Undefined variable: key in D:\Development\WebServers\OpenServer\domains\opencart-x.com\system\library\request.php on line 46
+2016-11-15 23:00:42 - PHP Notice:  Error: Could not load template E:/OpenServer/domains/opencart-x.com/admin/view/template/default/template/common/header.tpl! in E:\OpenServer\domains\opencart-x.com\system\storage\modification\system\engine\loader.php on line 86
