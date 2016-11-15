@@ -33,4 +33,24 @@ class Request {
 		return (isset($this->server['HTTP_X_REQUESTED_WITH']) && strtolower($this->server['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest');
 	}
 	
+	public function hasPost($keys = array()) {
+		return $this->_has($keys, $this->post);
+	}
+	
+	public function hasGet($keys = array()) {
+		return $this->_has($keys, $this->get);
+	}
+	
+	private function _has($keys, &$arr) {
+		if(is_string($keys)) {
+			return array_key_exists($keys, $arr);
+		}
+		
+		foreach($keys as $key) {
+			if(!array_key_exists($key, $arr)) return false;
+		}
+		
+		return true;
+	}
+	
 }
