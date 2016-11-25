@@ -126,5 +126,7 @@ require_once(DIR_SYSTEM . 'helper/general.php');
 require_once(DIR_SYSTEM . 'helper/json.php');
 require_once(DIR_SYSTEM . 'helper/utf8.php');
 require_once(DIR_SYSTEM . 'helper/lang.php');
+require_once(DIR_SYSTEM . 'helper/table.php');
+require_once(DIR_SYSTEM . 'helper/is_array_assoc.php');
 require_once(DIR_SYSTEM . 'helper/view.php');
 require_once(DIR_SYSTEM . 'helper/str_random.php');

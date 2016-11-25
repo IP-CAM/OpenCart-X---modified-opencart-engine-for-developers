@@ -27,4 +27,9 @@ class DB {
 	public function getLastId() {
 		return $this->db->getLastId();
 	}
+	
+	public static function table($table) {
+		return new db\QueryBuilder\Query($table);
+	}
+	
 }

