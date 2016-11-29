@@ -3,6 +3,8 @@ namespace db\QueryBuilder;
 
 class Query {
 	
+	use Common\Conditions;
+	
 	use Operations\Select;
 	use Operations\Insert;
 	use Operations\Update;
@@ -18,7 +20,7 @@ class Query {
 	}
 	
 	public function setTable($table) {
-		$this->table = DB_PREFIX.$table;
+		$this->table = DB_PREFIX.$this->escape($table);
 	}
 	
 	public function execute($sql) {
@@ -26,60 +28,28 @@ class Query {
 	}
 	
 	private function field($field) {
-		return "`".$this->table.".".$field."`";
-	}
-	
-	
-	/* Conditions */
-	private $single = false;
-	
-	public function where() {
-		return $this;
-	}
-	
-	public function orWhere() {
-		return $this;
-	}
-	
-	public function andWhere() {
-		return $this;
-	}
-	
-	public function find($keys) {
-		if(is_int($keys) or is_string($keys)) {
-			$this->single = true;
+		if(strpos($field, '.') !== false) {
+			$tmp = explode('.', $field);
+			return $this->table($tmp[0]).".`".$tmp[1]."`";
 		}
 		
-		return $this;
+		return "`".$this->table()."`.`".$this->escape($field)."`";
 	}
 	
-	public function first() {
-		$this->single = true;
-		
-		return $this;
-	}
-	
-	public function last() {
-		$this->single = true;
-		
-		return $this;
-	}
-	
-	public function random($limit = 1) {
-		if($limit == 1) {
-			$this->single = true;
+	private function table($table = null) {
+		if(is_null($table)) {
+			$table = $this->table;
 		}
 		
-		return $this;
+		return $this->tableAlias($table);
 	}
 	
-	/* Limit */
-	public function limit() {
-		return $this;
+	private function tableAlias($table) {
+		return $table;
 	}
 	
-	public function page() {
-		return $this;
+	private function escape($value) {
+		return $this->driver->escape($value);
 	}
 	
 }

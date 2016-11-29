@@ -1,6 +1,18 @@
 <?php
 class ControllerCommonHome extends Controller {
-	public function index() {		
+	public function index() {
+		
+		echo '<pre>';
+		
+		$result = DB::table('product')->where([
+			['product_id', 28],
+			['product_id', '<', 29],
+		])->get();
+		
+		print_r($result);
+		
+		echo '</pre>';
+		
 		$this->document->setTitle($this->config->get('config_meta_title'));
 		$this->document->setDescription($this->config->get('config_meta_description'));
 		$this->document->setKeywords($this->config->get('config_meta_keyword'));

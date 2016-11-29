@@ -24,7 +24,9 @@ trait Select {
 			$fields_sql = $this->field($fields);
 		}
 		
-		$sql = "SELECT ".$fields_sql." FROM `".$this->table."`";
+		$sql = "SELECT ".$fields_sql." FROM `".$this->table."`".$this->conditions_sql;
+		
+		echo $sql.PHP_EOL.PHP_EOL;
 		
 		$result = $this->execute($sql);
 		
@@ -36,17 +38,27 @@ trait Select {
 	}
 	
 	public function value($field) {
-		$result = $this->get();
+		$rows = $this->get();
 		
-		if(isset($result['field'])) {
-			return $result['field'];
+		if($this->single) {
+			if(isset($rows['field'])) {
+				return $rows['field'];
+			} else {
+				return null;
+			}
 		} else {
-			return null;
+			$results = array();
+			
+			foreach($rows as $row) {
+				$results[] = $row['field'];
+			}
+			
+			return $results;
 		}
 	}
 	
 	public function count() {
-		$sql = "SELECT COUNT(*) AS total FROM `".$this->table."`";
+		$sql = "SELECT COUNT(*) AS total FROM `".$this->table."`".$this->$conditions_sql;
 		$result = $this->execute($sql);
 		return $result->row['total'];
 	}
