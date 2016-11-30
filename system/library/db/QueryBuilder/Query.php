@@ -4,6 +4,8 @@ namespace db\QueryBuilder;
 class Query {
 	
 	use Common\Conditions;
+	use Common\Order;
+	use Common\Limit;
 	
 	use Operations\Select;
 	use Operations\Insert;

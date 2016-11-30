@@ -4,10 +4,7 @@ class ControllerCommonHome extends Controller {
 		
 		echo '<pre>';
 		
-		$result = DB::table('product')->where([
-			['product_id', 28],
-			['product_id', '<', 29],
-		])->get();
+		$result = DB::table('product')->where('sku', '')->last()->value('product_id');
 		
 		print_r($result);
 		

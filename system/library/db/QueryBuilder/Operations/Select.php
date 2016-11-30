@@ -24,7 +24,7 @@ trait Select {
 			$fields_sql = $this->field($fields);
 		}
 		
-		$sql = "SELECT ".$fields_sql." FROM `".$this->table."`".$this->conditions_sql;
+		$sql = "SELECT ".$fields_sql." FROM `".$this->table($this->table)."` ".$this->_where()." ".$this->_order()." ".$this->_limit();
 		
 		echo $sql.PHP_EOL.PHP_EOL;
 		
@@ -41,8 +41,8 @@ trait Select {
 		$rows = $this->get();
 		
 		if($this->single) {
-			if(isset($rows['field'])) {
-				return $rows['field'];
+			if(isset($rows[$field])) {
+				return $rows[$field];
 			} else {
 				return null;
 			}
@@ -50,7 +50,7 @@ trait Select {
 			$results = array();
 			
 			foreach($rows as $row) {
-				$results[] = $row['field'];
+				$results[] = $row[$field];
 			}
 			
 			return $results;

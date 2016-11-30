@@ -20,6 +20,14 @@ trait Conditions {
 		return $this;
 	}
 	
+	public function whereIn($keys) {
+		return $this;
+	}
+	
+	public function whereNotIn($keys) {
+		return $this;
+	}
+	
 	public function orWhere($field, $operator = '=', $value = null) {
 		$sql = $this->parseInputConditions($field, $operator, $value);
 		
@@ -43,11 +51,15 @@ trait Conditions {
 	public function first() {
 		$this->single = true;
 		
+		$this->limit(1);
+		
 		return $this;
 	}
 	
 	public function last() {
 		$this->single = true;
+		
+		$this->limit(1);
 		
 		return $this;
 	}
@@ -57,15 +69,6 @@ trait Conditions {
 			$this->single = true;
 		}
 		
-		return $this;
-	}
-	
-	/* Limit */
-	public function limit() {
-		return $this;
-	}
-	
-	public function page() {
 		return $this;
 	}
 	
@@ -102,10 +105,14 @@ trait Conditions {
 	
 	private function appendCondition($condition, $operator = 'AND') {
 		if(!$this->conditions_sql and $condition) {
-			$this->conditions_sql = " WHERE (".$condition.")";
+			$this->conditions_sql = "WHERE (".$condition.")";
 		} else {
 			$this->conditions_sql .= " ".$operator." (".$condition.")";
 		}
+	}
+	
+	private function _where() {
+		return $this->conditions_sql;
 	}
 	
 }
