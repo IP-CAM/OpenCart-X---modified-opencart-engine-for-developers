@@ -72,4 +72,10 @@ class Response {
 			echo $output;
 		}
 	}
+	
+	public function json($arr) {
+		$this->addHeader('Content-Type: application/json');
+		$this->setOutput(json_encode($arr));
+	}
+	
 }
