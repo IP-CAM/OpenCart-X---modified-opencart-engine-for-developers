@@ -933,6 +933,48 @@ class ControllerSettingSetting extends Controller {
 		} else {
 			$data['config_return_status_id'] = $this->config->get('config_return_status_id');
 		}
+		
+		if (isset($this->request->post['config_social_vk'])) {
+			$data['config_social_vk'] = $this->request->post['config_social_vk'];
+		} else {
+			$data['config_social_vk'] = $this->config->get('config_social_vk');
+		}
+		
+		if (isset($this->request->post['config_social_facebook'])) {
+			$data['config_social_facebook'] = $this->request->post['config_social_facebook'];
+		} else {
+			$data['config_social_facebook'] = $this->config->get('config_social_facebook');
+		}
+		
+		if (isset($this->request->post['config_social_google'])) {
+			$data['config_social_google'] = $this->request->post['config_social_google'];
+		} else {
+			$data['config_social_google'] = $this->config->get('config_social_google');
+		}
+		
+		if (isset($this->request->post['config_social_twitter'])) {
+			$data['config_social_twitter'] = $this->request->post['config_social_twitter'];
+		} else {
+			$data['config_social_twitter'] = $this->config->get('config_social_twitter');
+		}
+		
+		if (isset($this->request->post['config_social_instagram'])) {
+			$data['config_social_instagram'] = $this->request->post['config_social_instagram'];
+		} else {
+			$data['config_social_instagram'] = $this->config->get('config_social_instagram');
+		}
+		
+		if (isset($this->request->post['config_social_youtube'])) {
+			$data['config_social_youtube'] = $this->request->post['config_social_youtube'];
+		} else {
+			$data['config_social_youtube'] = $this->config->get('config_social_youtube');
+		}
+		
+		if (isset($this->request->post['config_social_pinterest'])) {
+			$data['config_social_pinterest'] = $this->request->post['config_social_pinterest'];
+		} else {
+			$data['config_social_pinterest'] = $this->config->get('config_social_pinterest');
+		}
 
 		$this->load->model('localisation/return_status');
 

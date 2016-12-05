@@ -36,6 +36,7 @@
             <li><a href="#tab-local" data-toggle="tab"><?php echo $tab_local; ?></a></li>
             <li><a href="#tab-option" data-toggle="tab"><?php echo $tab_option; ?></a></li>
             <li><a href="#tab-image" data-toggle="tab"><?php echo $tab_image; ?></a></li>
+			<li><a href="#tab-social" data-toggle="tab">Соц. сети</a></li>
             <li><a href="#tab-ftp" data-toggle="tab"><?php echo $tab_ftp; ?></a></li>
             <li><a href="#tab-mail" data-toggle="tab"><?php echo $tab_mail; ?></a></li>
             <li><a href="#tab-server" data-toggle="tab"><?php echo $tab_server; ?></a></li>
@@ -1238,6 +1239,52 @@
                 </div>
               </div>
             </div>
+			
+			<div class="tab-pane" id="tab-social">
+			  <div class="form-group">
+                <label class="col-sm-2 control-label">Вконтакте</label>
+                <div class="col-sm-10">
+                  <input type="text" name="config_social_vk" value="<?php echo $config_social_vk; ?>" placeholder="https://" class="form-control" />
+                </div>
+              </div>
+			  <div class="form-group">
+                <label class="col-sm-2 control-label">Facebook</label>
+                <div class="col-sm-10">
+                  <input type="text" name="config_social_facebook" value="<?php echo $config_social_facebook; ?>" placeholder="https://" class="form-control" />
+                </div>
+              </div>
+			  <div class="form-group">
+                <label class="col-sm-2 control-label">Google+</label>
+                <div class="col-sm-10">
+                  <input type="text" name="config_social_google" value="<?php echo $config_social_google; ?>" placeholder="https://" class="form-control" />
+                </div>
+              </div>
+			  <div class="form-group">
+                <label class="col-sm-2 control-label">Twitter</label>
+                <div class="col-sm-10">
+                  <input type="text" name="config_social_twitter" value="<?php echo $config_social_twitter; ?>" placeholder="https://" class="form-control" />
+                </div>
+              </div>
+			  <div class="form-group">
+                <label class="col-sm-2 control-label">Instagram</label>
+                <div class="col-sm-10">
+                  <input type="text" name="config_social_instagram" value="<?php echo $config_social_instagram; ?>" placeholder="https://" class="form-control" />
+                </div>
+              </div>
+			  <div class="form-group">
+                <label class="col-sm-2 control-label">YouTube</label>
+                <div class="col-sm-10">
+                  <input type="text" name="config_social_youtube" value="<?php echo $config_social_youtube; ?>" placeholder="https://" class="form-control" />
+                </div>
+              </div>
+			  <div class="form-group">
+                <label class="col-sm-2 control-label">Pinterest</label>
+                <div class="col-sm-10">
+                  <input type="text" name="config_social_pinterest" value="<?php echo $config_social_pinterest; ?>" placeholder="https://" class="form-control" />
+                </div>
+              </div>
+			</div>
+			
             <div class="tab-pane" id="tab-ftp">
               <div class="form-group">
                 <label class="col-sm-2 control-label" for="input-ftp-host"><?php echo $entry_ftp_hostname; ?></label>
