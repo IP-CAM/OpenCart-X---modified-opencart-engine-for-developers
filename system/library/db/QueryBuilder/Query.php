@@ -3,6 +3,7 @@ namespace db\QueryBuilder;
 
 class Query {
 	
+	use Common\SchemaAnalyzer;
 	use Common\Conditions;
 	use Common\Order;
 	use Common\Limit;
@@ -35,7 +36,7 @@ class Query {
 			return $this->table($tmp[0]).".`".$tmp[1]."`";
 		}
 		
-		return "`".$this->table()."`.`".$this->escape($field)."`";
+		return $this->table().".`".$this->escape($field)."`";
 	}
 	
 	private function table($table = null) {
@@ -43,7 +44,7 @@ class Query {
 			$table = $this->table;
 		}
 		
-		return $this->tableAlias($table);
+		return "`".$this->tableAlias($table)."`";
 	}
 	
 	private function tableAlias($table) {

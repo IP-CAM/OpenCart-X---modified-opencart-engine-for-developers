@@ -41,6 +41,35 @@ final class MySQLi {
 			trigger_error('Error: ' . $this->link->error  . '<br />Error No: ' . $this->link->errno . '<br />' . $sql);
 		}
 	}
+	
+	public function multiQuery($sql) {
+		$query = $this->link->multi_query($sql);
+		
+		if (!$this->link->errno) {
+			$data = array();
+			
+			$num_rows = 0;
+			
+			do {
+				if ($query = $this->link->use_result()) {
+					while ($row = $query->fetch_assoc()) {
+						$data[] = $row;
+					}
+					$num_rows += $query->num_rows;
+					$query->free();
+				}
+			} while ($this->link->more_results() &&  $this->link->next_result());
+			
+			$result = new \stdClass();
+			$result->num_rows = $num_rows;
+			$result->row = isset($data[0]) ? $data[0] : array();
+			$result->rows = $data;
+			
+			return $result;
+		} else {
+			trigger_error('Error: ' . $this->link->error  . '<br />Error No: ' . $this->link->errno . '<br />' . $sql);
+		}
+	}
 
 	public function escape($value) {
 		return $this->link->real_escape_string($value);

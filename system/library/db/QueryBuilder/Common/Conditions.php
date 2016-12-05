@@ -20,12 +20,12 @@ trait Conditions {
 		return $this;
 	}
 	
-	public function whereIn($keys) {
-		return $this;
+	public function whereIn($field, $keys) {
+		return $this->whereRaw($this->field($field)." IN (".$this->implodeValues($keys).")");
 	}
 	
 	public function whereNotIn($keys) {
-		return $this;
+		return $this->whereRaw($this->field($field)." NOT IN (".$this->implodeValues($keys).")");
 	}
 	
 	public function orWhere($field, $operator = '=', $value = null) {
@@ -43,6 +43,9 @@ trait Conditions {
 	public function find($keys) {
 		if(is_int($keys) or is_string($keys)) {
 			$this->single = true;
+			$this->where($this->getPrimaryKey($this->table), $keys);
+		} else {
+			$this->whereIn($this->getPrimaryKey($this->table), $keys);
 		}
 		
 		return $this;
@@ -113,6 +116,14 @@ trait Conditions {
 	
 	private function _where() {
 		return $this->conditions_sql;
+	}
+	
+	private function implodeValues($values) {
+		for($i=0; $i<count($values); $i++) {
+			$values[$i] = "'".$this->driver->escape($values[$i])."'";
+		}
+		
+		return implode(',', $values);
 	}
 	
 }

@@ -15,6 +15,10 @@ class DB {
 	public function query($sql) {
 		return $this->db->query($sql);
 	}
+	
+	public function multiQuery($sql) {
+		return $this->db->multiQuery($sql);
+	}
 
 	public function escape($value) {
 		return $this->db->escape($value);
