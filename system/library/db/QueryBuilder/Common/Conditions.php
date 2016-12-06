@@ -43,9 +43,9 @@ trait Conditions {
 	public function find($keys) {
 		if(is_int($keys) or is_string($keys)) {
 			$this->single = true;
-			$this->where($this->getPrimaryKey($this->table), $keys);
+			$this->where($this->getPrimaryKey(), $keys);
 		} else {
-			$this->whereIn($this->getPrimaryKey($this->table), $keys);
+			$this->whereIn($this->getPrimaryKey(), $keys);
 		}
 		
 		return $this;
@@ -108,7 +108,7 @@ trait Conditions {
 	
 	private function appendCondition($condition, $operator = 'AND') {
 		if(!$this->conditions_sql and $condition) {
-			$this->conditions_sql = "WHERE (".$condition.")";
+			$this->conditions_sql = " WHERE (".$condition.")";
 		} else {
 			$this->conditions_sql .= " ".$operator." (".$condition.")";
 		}

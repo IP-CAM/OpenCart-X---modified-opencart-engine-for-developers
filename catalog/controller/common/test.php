@@ -1,12 +1,19 @@
 <?php
 class ControllerCommonTest extends Controller {
 	
-	public function db() {
+	public function index() {
 		echo '<pre>';
 		
-		$result = DB::table('product')->find([28, 29])->get();
-		
+		/* GET --------------------- *
+		$result = DB::table('product')->find([28, 29])->sortBy('product_id')->get();
 		print_r($result);
+		*/
+		
+		/* DELETE ------------------ *
+		//DB::table('test')->where('id', '>', 0)->limit(1)->delete();
+		
+		//DB::table('test')->clear();
+		*/
 		
 		echo '</pre>';
 	}
@@ -49,7 +56,7 @@ class ControllerCommonTest extends Controller {
 	
 	
 	
-	public function index() {
+	public function tree() {
 		// 8 - Шафа
 		// 9 - Ліжко
 		// 14 - круглий металевий стіл

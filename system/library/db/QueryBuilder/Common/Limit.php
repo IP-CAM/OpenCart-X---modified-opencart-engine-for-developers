@@ -4,7 +4,7 @@ namespace db\QueryBuilder\Common;
 trait Limit {
 	
 	private $page;
-	private $count;
+	private $limit;
 	
 	public function page($page) {
 		$page = intval($page);
@@ -13,20 +13,20 @@ trait Limit {
 		return $this;
 	}
 	
-	public function limit($count) {
-		$count = intval($count);
-		$this->count = $count > 0 ? $count : 1;
+	public function limit($limit) {
+		$limit = intval($limit);
+		$this->limit = $limit > 0 ? $limit : 1;
 		
 		return $this;
 	}
 	
 	public function _limit() {
-		if($this->count && $this->page) {
-			return "LIMIT ".(($this->page - 1) * $this->count).",".$this->count;
+		if($this->limit && $this->page) {
+			return " LIMIT ".(($this->page - 1) * $this->limit).",".$this->limit;
 		}
 		
-		if($this->count && !$this->page) {
-			return "LIMIT ".$this->count;
+		if($this->limit && !$this->page) {
+			return " LIMIT ".$this->limit;
 		}
 		
 		return "";

@@ -7,13 +7,11 @@ trait SchemaAnalyzer {
 	private $columns = array();
 	
 	public function getPrimaryKey($table = null) {		
-		$table = $this->table($table);
-		
 		if(isset($this->primaryKeys[$table])) {
 			return $this->primaryKeys[$table];
 		}
 		
-		$result = $this->driver->query("SHOW KEYS FROM ".$table." WHERE Key_name = 'PRIMARY'");
+		$result = $this->driver->query("SHOW KEYS FROM ".$this->_table($table)." WHERE Key_name = 'PRIMARY'");
 		
 		return $result->row['Column_name'];
 	}

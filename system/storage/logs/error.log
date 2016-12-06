@@ -32,3 +32,5 @@
 2016-12-05 15:36:49 - PHP Notice:  Trying to get property of non-object in D:\Development\WebServers\OpenServer\domains\opencart-x.com\system\library\db\QueryBuilder\Common\SchemaAnalyzer.php on line 18
 2016-12-05 15:36:49 - PHP Notice:  Error: Unknown column 'oc_product.' in 'where clause'<br />Error No: 1054<br />SELECT * FROM `oc_product` WHERE (`oc_product`.``='28')   in D:\Development\WebServers\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
 2016-12-05 15:36:49 - PHP Notice:  Trying to get property of non-object in D:\Development\WebServers\OpenServer\domains\opencart-x.com\system\library\db\QueryBuilder\Operations\Select.php on line 34
+2016-12-06 14:26:55 - PHP Notice:  Error: Table 'opencart_x.oc_test' doesn't exist<br />Error No: 1146<br />CALL get_tree(27) in D:\Development\WebServers\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 70
+2016-12-06 14:26:55 - PHP Notice:  Trying to get property of non-object in D:\Development\WebServers\OpenServer\domains\opencart-x.com\catalog\controller\common\test.php on line 64

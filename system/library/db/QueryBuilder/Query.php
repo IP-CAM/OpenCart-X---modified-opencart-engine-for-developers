@@ -12,7 +12,6 @@ class Query {
 	use Operations\Insert;
 	use Operations\Update;
 	use Operations\Delete;
-	use Operations\Truncate;
 	
 	private $driver;
 	private $table;
@@ -33,13 +32,13 @@ class Query {
 	private function field($field) {
 		if(strpos($field, '.') !== false) {
 			$tmp = explode('.', $field);
-			return $this->table($tmp[0]).".`".$tmp[1]."`";
+			return $this->_table($tmp[0]).".`".$tmp[1]."`";
 		}
 		
-		return $this->table().".`".$this->escape($field)."`";
+		return $this->_table().".`".$this->escape($field)."`";
 	}
 	
-	private function table($table = null) {
+	private function _table($table = null) {
 		if(is_null($table)) {
 			$table = $this->table;
 		}

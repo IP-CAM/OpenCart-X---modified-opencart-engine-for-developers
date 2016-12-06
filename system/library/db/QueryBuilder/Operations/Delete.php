@@ -3,10 +3,21 @@ namespace db\QueryBuilder\Operations;
 
 trait Delete {
 	
-	public function delete() {
-		$sql = "SELECT COUNT(*) AS total FROM `".DB_PREFIX.$this->table."`";
+	public function delete($limit = null) {
+		if(!is_null($limit)) {
+			$this->limit($limit);
+		}
+		
+		$sql = "DELETE FROM ".$this->_table().$this->_where().$this->_order().$this->_limit();
 		$result = $this->execute($sql);
-		return $result->row['total'];
+		
+		return $this;
+	}
+	
+	public function clear() {
+		$this->execute("TRUNCATE TABLE ".$this->_table());
+		
+		return $this;
 	}
 	
 }
