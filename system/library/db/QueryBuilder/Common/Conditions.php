@@ -83,9 +83,9 @@ trait Conditions {
 			
 			foreach($field as $cond) {				
 				if(count($cond) == 2) {
-					$tmp[] = $this->createCondition($cond[0], '=', $cond[1]);
+					$tmp[] = $this->fieldToValue($cond[0], '=', $cond[1]);
 				} else {
-					$tmp[] = $this->createCondition($cond[0], $cond[1], $cond[2]);
+					$tmp[] = $this->fieldToValue($cond[0], $cond[1], $cond[2]);
 				}
 			}
 			
@@ -96,14 +96,10 @@ trait Conditions {
 				$operator = '=';
 			}
 			
-			$sql = $this->createCondition($field, $operator, $value);
+			$sql = $this->fieldToValue($field, $operator, $value);
 		}
 		
 		return $sql;
-	}
-	
-	private function createCondition($field, $operator, $value) {
-		return $this->field($field).$operator."'".$this->escape($value)."'";
 	}
 	
 	private function appendCondition($condition, $operator = 'AND') {
@@ -120,7 +116,7 @@ trait Conditions {
 	
 	private function implodeValues($values) {
 		for($i=0; $i<count($values); $i++) {
-			$values[$i] = "'".$this->driver->escape($values[$i])."'";
+			$values[$i] = "'".$this->escape($values[$i])."'";
 		}
 		
 		return implode(',', $values);

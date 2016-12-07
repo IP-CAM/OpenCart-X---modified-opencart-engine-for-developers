@@ -5,14 +5,32 @@ class ControllerCommonTest extends Controller {
 		echo '<pre>';
 		
 		/* GET --------------------- *
-		$result = DB::table('product')->find([28, 29])->sortBy('product_id')->get();
+		$name = DB::table('customer')->where('name', 'вася')->get('name');
+		
+		$result = DB::table('product')->find([28, 29])->sortBy('product_id', 'DESC')->get();
+		print_r($result);
+		*/
+		
+		/* INSERT ------------------ *
+		$result = DB::table('test')->insert([
+			['key' => 'k1', 'value' => 'v1'],
+			['key' => 'k2', 'value' => 'v2']
+		]);
+		
+		print_r($result);
+		
+		$result = DB::table('test')->insert([
+			'key' => 'k2',
+			'value' => 'v2'
+		]);
+		
 		print_r($result);
 		*/
 		
 		/* DELETE ------------------ *
-		//DB::table('test')->where('id', '>', 0)->limit(1)->delete();
+		DB::table('test')->where('id', '>', 0)->limit(1)->delete();
 		
-		//DB::table('test')->clear();
+		DB::table('test')->clear();
 		*/
 		
 		echo '</pre>';

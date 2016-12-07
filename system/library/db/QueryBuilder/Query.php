@@ -50,6 +50,15 @@ class Query {
 		return $table;
 	}
 	
+	private function fieldToValue($field, $operator, $value = null) {
+		if(is_null($value)) {
+			$value = $operator;
+			$operator = "=";
+		}
+		
+		return $this->field($field).$operator."'".$this->escape($value)."'";
+	}
+	
 	private function escape($value) {
 		return $this->driver->escape($value);
 	}
