@@ -4,14 +4,24 @@ class ControllerCommonTest extends Controller {
 	public function index() {
 		echo '<pre>';
 		
-		/* GET --------------------- *
-		$name = DB::table('customer')->where('name', 'вася')->get('name');
+		/* GET --------------------- */
+		$name = DB::table('customer')->where('name', 'вася')->value('name');
+		echo $name;
 		
 		$result = DB::table('product')->find([28, 29])->sortBy('product_id', 'DESC')->get();
 		print_r($result);
-		*/
 		
-		/* INSERT ------------------ *
+		$result = DB::table('product')->limit(10)->page(1)->get();
+		print_r($result);
+		
+		$result = DB::table('product')->first(10)->get();
+		print_r($result);
+		
+		$result = DB::table('product')->last()->get(['name', 'password']);
+		print_r($result);
+		
+		
+		/* INSERT ------------------ */
 		$result = DB::table('test')->insert([
 			['key' => 'k1', 'value' => 'v1'],
 			['key' => 'k2', 'value' => 'v2']
@@ -25,13 +35,25 @@ class ControllerCommonTest extends Controller {
 		]);
 		
 		print_r($result);
-		*/
 		
-		/* DELETE ------------------ *
-		DB::table('test')->where('id', '>', 0)->limit(1)->delete();
+		
+		/* UPDATE ------------------ */
+		$result = DB::table('test')->update([
+			['key' => 'k1', 'value' => 'v1'],
+			['key' => 'k2', 'value' => 'v2']
+		]);
+		
+		DB::table('test')->find(14)->increment('number');
+		
+		DB::table('test')->find(14)->decrement('number');
+		
+		DB::table('test')->find(14)->toggle('number');
+		
+		/* DELETE ------------------ */
+		DB::table('test')->where('id', '>', 0)->delete();
 		
 		DB::table('test')->clear();
-		*/
+		
 		
 		echo '</pre>';
 	}

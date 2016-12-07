@@ -10,36 +10,31 @@ trait Update {
 			$fields[] = $this->fieldToValue($field, $value);
 		}
 		
-		$fields = implode(',', $fields);
+		$fields_sql = implode(',', $fields);
 		
-		$sql = "UPDATE ".$this->_table()." SET ".$fields.$this->_where();
-		
-		$this->execute($sql);
+		$this->_update($fields_sql);
 	}
 	
 	public function increment($field) {
+		$fields_sql = $this->field($field)."=(".$this->field($field)." + 1)";
 		
+		$this->_update($fields_sql);
 	}
 	
 	public function decrement($field) {
+		$fields_sql = $this->field($field)."=(".$this->field($field)." - 1)";
 		
+		$this->_update($fields_sql);
 	}
 	
 	public function toggle($field) {
-		if(!is_array($fields)) {
-			$fields_sql = "`".$this->field($fields)."` = NOT `".$this->field($fields)."`";
-		}
-		else {
-			$tmp = array();
-			
-			foreach($fields as $field) {
-				$tmp[] = "`".$this->field($field)."` = NOT `".$this->field($field)."`";
-			}
-			
-			$fields_sql = implode(',', $tmp);
-		}
+		$fields_sql = $this->field($field)."=(NOT ".$this->field($field).")";
 		
-		$sql = "UPDATE ".$this->_table()." SET ".$fields.$this->_where();
+		$this->_update($fields_sql);
+	}
+	
+	private function _update($fields_sql) {
+		$sql = "UPDATE ".$this->_table()." SET ".$fields_sql.$this->_where();
 		
 		$this->execute($sql);
 	}
