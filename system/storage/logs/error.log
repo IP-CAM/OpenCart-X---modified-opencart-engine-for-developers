@@ -59,3 +59,385 @@
 2016-12-07 18:09:03 - PHP Notice:  Undefined variable: fields in D:\Development\WebServers\OpenServer\domains\opencart-x.com\system\library\db\QueryBuilder\Operations\Update.php on line 32
 2016-12-07 18:09:03 - PHP Notice:  Undefined variable: fields in D:\Development\WebServers\OpenServer\domains\opencart-x.com\system\library\db\QueryBuilder\Operations\Update.php on line 32
 2016-12-07 18:09:03 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'oc_test`.``` = NOT ``oc_test`.``` WHERE (`oc_test`.`id`='14')' at line 1<br />Error No: 1064<br />UPDATE `oc_test` SET ``oc_test`.``` = NOT ``oc_test`.``` WHERE (`oc_test`.`id`='14') in D:\Development\WebServers\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-07 23:42:20 - PHP Notice:  Error: Unknown column 'oc_customer.name' in 'field list'<br />Error No: 1054<br />SELECT `oc_customer`.`name` FROM `oc_customer` WHERE (`oc_customer`.`name`='‚‡Òˇ') in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-07 23:42:20 - PHP Notice:  Trying to get property of non-object in E:\OpenServer\domains\opencart-x.com\system\library\db\QueryBuilder\Operations\Select.php on line 34
+2016-12-07 23:42:20 - PHP Warning:  Invalid argument supplied for foreach() in E:\OpenServer\domains\opencart-x.com\system\library\db\QueryBuilder\Operations\Select.php on line 50
+2016-12-07 23:42:20 - PHP Notice:  Array to string conversion in E:\OpenServer\domains\opencart-x.com\catalog\controller\common\test.php on line 9
+2016-12-07 23:42:21 - PHP Notice:  Error: Unknown column 'oc_product.name' in 'field list'<br />Error No: 1054<br />SELECT `oc_product`.`name`,`oc_product`.`password` FROM `oc_product` LIMIT 1 in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-07 23:42:21 - PHP Notice:  Trying to get property of non-object in E:\OpenServer\domains\opencart-x.com\system\library\db\QueryBuilder\Operations\Select.php on line 32
+2016-12-07 23:42:21 - PHP Notice:  Error: Unknown column 'oc_test.key' in 'field list'<br />Error No: 1054<br />INSERT INTO `oc_test` SET `oc_test`.`key`='k1',`oc_test`.`value`='v1' in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-07 23:42:21 - PHP Notice:  Error: Unknown column 'oc_test.key' in 'field list'<br />Error No: 1054<br />INSERT INTO `oc_test` SET `oc_test`.`key`='k2',`oc_test`.`value`='v2' in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-07 23:42:21 - PHP Notice:  Error: Unknown column 'oc_test.key' in 'field list'<br />Error No: 1054<br />INSERT INTO `oc_test` SET `oc_test`.`key`='k2',`oc_test`.`value`='v2' in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-07 23:42:21 - PHP Warning:  mysqli::real_escape_string() expects parameter 1 to be string, array given in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 75
+2016-12-07 23:42:21 - PHP Warning:  mysqli::real_escape_string() expects parameter 1 to be string, array given in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 75
+2016-12-07 23:42:21 - PHP Notice:  Error: Unknown column 'oc_test.0' in 'field list'<br />Error No: 1054<br />UPDATE `oc_test` SET `oc_test`.`0`='',`oc_test`.`1`='' in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-07 23:42:21 - PHP Notice:  Error: Unknown column 'oc_test.number' in 'field list'<br />Error No: 1054<br />UPDATE `oc_test` SET `oc_test`.`number`=(`oc_test`.`number` + 1) WHERE (`oc_test`.`id`='14') in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-07 23:42:21 - PHP Notice:  Error: Unknown column 'oc_test.number' in 'field list'<br />Error No: 1054<br />UPDATE `oc_test` SET `oc_test`.`number`=(`oc_test`.`number` - 1) WHERE (`oc_test`.`id`='14') in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-07 23:42:21 - PHP Notice:  Error: Unknown column 'oc_test.number' in 'field list'<br />Error No: 1054<br />UPDATE `oc_test` SET `oc_test`.`number`=(NOT `oc_test`.`number`) WHERE (`oc_test`.`id`='14') in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-07 23:48:22 - PHP Notice:  Error: Unknown column 'oc_customer.name' in 'field list'<br />Error No: 1054<br />SELECT `oc_customer`.`name` FROM `oc_customer` WHERE (`oc_customer`.`name`='–≤–∞—Å—è') in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-07 23:48:22 - PHP Notice:  Trying to get property of non-object in E:\OpenServer\domains\opencart-x.com\system\library\db\QueryBuilder\Operations\Select.php on line 34
+2016-12-07 23:48:22 - PHP Warning:  Invalid argument supplied for foreach() in E:\OpenServer\domains\opencart-x.com\system\library\db\QueryBuilder\Operations\Select.php on line 50
+2016-12-07 23:48:22 - PHP Notice:  Array to string conversion in E:\OpenServer\domains\opencart-x.com\catalog\controller\common\test.php on line 9
+2016-12-07 23:48:22 - PHP Notice:  Error: Unknown column 'oc_product.name' in 'field list'<br />Error No: 1054<br />SELECT `oc_product`.`name`,`oc_product`.`password` FROM `oc_product` LIMIT 1 in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-07 23:48:22 - PHP Notice:  Trying to get property of non-object in E:\OpenServer\domains\opencart-x.com\system\library\db\QueryBuilder\Operations\Select.php on line 32
+2016-12-07 23:48:22 - PHP Notice:  Error: Unknown column 'oc_test.key' in 'field list'<br />Error No: 1054<br />INSERT INTO `oc_test` SET `oc_test`.`key`='k1',`oc_test`.`value`='v1' in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-07 23:48:22 - PHP Notice:  Error: Unknown column 'oc_test.key' in 'field list'<br />Error No: 1054<br />INSERT INTO `oc_test` SET `oc_test`.`key`='k2',`oc_test`.`value`='v2' in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-07 23:48:22 - PHP Notice:  Error: Unknown column 'oc_test.key' in 'field list'<br />Error No: 1054<br />INSERT INTO `oc_test` SET `oc_test`.`key`='k2',`oc_test`.`value`='v2' in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-07 23:48:22 - PHP Warning:  mysqli::real_escape_string() expects parameter 1 to be string, array given in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 75
+2016-12-07 23:48:22 - PHP Warning:  mysqli::real_escape_string() expects parameter 1 to be string, array given in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 75
+2016-12-07 23:48:22 - PHP Notice:  Error: Unknown column 'oc_test.0' in 'field list'<br />Error No: 1054<br />UPDATE `oc_test` SET `oc_test`.`0`='',`oc_test`.`1`='' in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-07 23:48:22 - PHP Notice:  Error: Unknown column 'oc_test.number' in 'field list'<br />Error No: 1054<br />UPDATE `oc_test` SET `oc_test`.`number`=(`oc_test`.`number` + 1) WHERE (`oc_test`.`id`='14') in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-07 23:48:22 - PHP Notice:  Error: Unknown column 'oc_test.number' in 'field list'<br />Error No: 1054<br />UPDATE `oc_test` SET `oc_test`.`number`=(`oc_test`.`number` - 1) WHERE (`oc_test`.`id`='14') in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-07 23:48:22 - PHP Notice:  Error: Unknown column 'oc_test.number' in 'field list'<br />Error No: 1054<br />UPDATE `oc_test` SET `oc_test`.`number`=(NOT `oc_test`.`number`) WHERE (`oc_test`.`id`='14') in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-09 19:23:42 - PHP Warning:  mysqli::query(): MySQL server has gone away in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 19
+2016-12-09 19:23:42 - PHP Warning:  mysqli::query(): Error reading result set's header in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 19
+2016-12-09 19:23:42 - PHP Notice:  Error: MySQL server has gone away<br />Error No: 2006<br />SELECT * FROM oc_currency in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-09 19:23:42 - PHP Notice:  Trying to get property of non-object in E:\OpenServer\domains\opencart-x.com\system\library\currency.php on line 15
+2016-12-09 19:23:42 - PHP Warning:  Invalid argument supplied for foreach() in E:\OpenServer\domains\opencart-x.com\system\library\currency.php on line 15
+2016-12-09 19:23:42 - PHP Notice:  Error: MySQL server has gone away<br />Error No: 2006<br />SELECT tr1.tax_class_id, tr2.tax_rate_id, tr2.name, tr2.rate, tr2.type, tr1.priority FROM oc_tax_rule tr1 LEFT JOIN oc_tax_rate tr2 ON (tr1.tax_rate_id = tr2.tax_rate_id) INNER JOIN oc_tax_rate_to_customer_group tr2cg ON (tr2.tax_rate_id = tr2cg.tax_rate_id) LEFT JOIN oc_zone_to_geo_zone z2gz ON (tr2.geo_zone_id = z2gz.geo_zone_id) LEFT JOIN oc_geo_zone gz ON (tr2.geo_zone_id = gz.geo_zone_id) WHERE tr1.based = 'shipping' AND tr2cg.customer_group_id = '1' AND z2gz.country_id = '176' AND (z2gz.zone_id = '0' OR z2gz.zone_id = '0') ORDER BY tr1.priority ASC in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-09 19:23:42 - PHP Notice:  Trying to get property of non-object in E:\OpenServer\domains\opencart-x.com\system\library\tax.php on line 28
+2016-12-09 19:23:42 - PHP Warning:  Invalid argument supplied for foreach() in E:\OpenServer\domains\opencart-x.com\system\library\tax.php on line 28
+2016-12-09 19:23:42 - PHP Notice:  Error: MySQL server has gone away<br />Error No: 2006<br />SELECT tr1.tax_class_id, tr2.tax_rate_id, tr2.name, tr2.rate, tr2.type, tr1.priority FROM oc_tax_rule tr1 LEFT JOIN oc_tax_rate tr2 ON (tr1.tax_rate_id = tr2.tax_rate_id) INNER JOIN oc_tax_rate_to_customer_group tr2cg ON (tr2.tax_rate_id = tr2cg.tax_rate_id) LEFT JOIN oc_zone_to_geo_zone z2gz ON (tr2.geo_zone_id = z2gz.geo_zone_id) LEFT JOIN oc_geo_zone gz ON (tr2.geo_zone_id = gz.geo_zone_id) WHERE tr1.based = 'store' AND tr2cg.customer_group_id = '1' AND z2gz.country_id = '176' AND (z2gz.zone_id = '0' OR z2gz.zone_id = '0') ORDER BY tr1.priority ASC in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-09 19:23:42 - PHP Notice:  Trying to get property of non-object in E:\OpenServer\domains\opencart-x.com\system\library\tax.php on line 56
+2016-12-09 19:23:42 - PHP Warning:  Invalid argument supplied for foreach() in E:\OpenServer\domains\opencart-x.com\system\library\tax.php on line 56
+2016-12-09 19:23:42 - PHP Notice:  Error: MySQL server has gone away<br />Error No: 2006<br />SELECT * FROM oc_weight_class wc LEFT JOIN oc_weight_class_description wcd ON (wc.weight_class_id = wcd.weight_class_id) WHERE wcd.language_id = '1' in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-09 19:23:42 - PHP Notice:  Trying to get property of non-object in E:\OpenServer\domains\opencart-x.com\system\library\weight.php on line 11
+2016-12-09 19:23:42 - PHP Warning:  Invalid argument supplied for foreach() in E:\OpenServer\domains\opencart-x.com\system\library\weight.php on line 11
+2016-12-09 19:23:42 - PHP Notice:  Error: MySQL server has gone away<br />Error No: 2006<br />SELECT * FROM oc_length_class mc LEFT JOIN oc_length_class_description mcd ON (mc.length_class_id = mcd.length_class_id) WHERE mcd.language_id = '1' in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-09 19:23:42 - PHP Notice:  Trying to get property of non-object in E:\OpenServer\domains\opencart-x.com\system\library\length.php on line 11
+2016-12-09 19:23:42 - PHP Warning:  Invalid argument supplied for foreach() in E:\OpenServer\domains\opencart-x.com\system\library\length.php on line 11
+2016-12-09 19:23:42 - PHP Notice:  Error: MySQL server has gone away<br />Error No: 2006<br />DELETE FROM oc_cart WHERE customer_id = '0' AND date_added < DATE_SUB(NOW(), INTERVAL 1 HOUR) in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-09 19:23:42 - PHP Notice:  Error: MySQL server has gone away<br />Error No: 2006<br />SELECT * FROM oc_extension WHERE `type` = 'openbay' in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-09 19:23:42 - PHP Notice:  Trying to get property of non-object in E:\OpenServer\domains\opencart-x.com\system\library\openbay.php on line 119
+2016-12-09 19:23:42 - PHP Warning:  Invalid argument supplied for foreach() in E:\OpenServer\domains\opencart-x.com\system\library\openbay.php on line 119
+2016-12-09 19:23:42 - PHP Notice:  Error: MySQL server has gone away<br />Error No: 2006<br />SELECT * FROM oc_event in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-09 19:23:42 - PHP Notice:  Trying to get property of non-object in E:\OpenServer\domains\opencart-x.com\index.php on line 250
+2016-12-09 19:23:42 - PHP Warning:  Invalid argument supplied for foreach() in E:\OpenServer\domains\opencart-x.com\index.php on line 250
+2016-12-09 19:23:42 - PHP Notice:  Undefined variable: query in E:\OpenServer\domains\opencart-x.com\catalog\controller\common\test.php on line 114
+2016-12-09 19:23:42 - PHP Notice:  Trying to get property of non-object in E:\OpenServer\domains\opencart-x.com\catalog\controller\common\test.php on line 114
+2016-12-09 19:23:42 - PHP Warning:  mysqli::query(): MySQL server has gone away in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 19
+2016-12-09 19:23:42 - PHP Warning:  mysqli::query(): Error reading result set's header in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 19
+2016-12-09 19:23:42 - PHP Notice:  Error: MySQL server has gone away<br />Error No: 2006<br />SELECT * FROM oc_currency in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-09 19:23:42 - PHP Notice:  Trying to get property of non-object in E:\OpenServer\domains\opencart-x.com\system\library\currency.php on line 15
+2016-12-09 19:23:42 - PHP Warning:  Invalid argument supplied for foreach() in E:\OpenServer\domains\opencart-x.com\system\library\currency.php on line 15
+2016-12-09 19:23:42 - PHP Notice:  Error: MySQL server has gone away<br />Error No: 2006<br />SELECT tr1.tax_class_id, tr2.tax_rate_id, tr2.name, tr2.rate, tr2.type, tr1.priority FROM oc_tax_rule tr1 LEFT JOIN oc_tax_rate tr2 ON (tr1.tax_rate_id = tr2.tax_rate_id) INNER JOIN oc_tax_rate_to_customer_group tr2cg ON (tr2.tax_rate_id = tr2cg.tax_rate_id) LEFT JOIN oc_zone_to_geo_zone z2gz ON (tr2.geo_zone_id = z2gz.geo_zone_id) LEFT JOIN oc_geo_zone gz ON (tr2.geo_zone_id = gz.geo_zone_id) WHERE tr1.based = 'shipping' AND tr2cg.customer_group_id = '1' AND z2gz.country_id = '176' AND (z2gz.zone_id = '0' OR z2gz.zone_id = '0') ORDER BY tr1.priority ASC in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-09 19:23:42 - PHP Notice:  Trying to get property of non-object in E:\OpenServer\domains\opencart-x.com\system\library\tax.php on line 28
+2016-12-09 19:23:42 - PHP Warning:  Invalid argument supplied for foreach() in E:\OpenServer\domains\opencart-x.com\system\library\tax.php on line 28
+2016-12-09 19:23:42 - PHP Notice:  Error: MySQL server has gone away<br />Error No: 2006<br />SELECT tr1.tax_class_id, tr2.tax_rate_id, tr2.name, tr2.rate, tr2.type, tr1.priority FROM oc_tax_rule tr1 LEFT JOIN oc_tax_rate tr2 ON (tr1.tax_rate_id = tr2.tax_rate_id) INNER JOIN oc_tax_rate_to_customer_group tr2cg ON (tr2.tax_rate_id = tr2cg.tax_rate_id) LEFT JOIN oc_zone_to_geo_zone z2gz ON (tr2.geo_zone_id = z2gz.geo_zone_id) LEFT JOIN oc_geo_zone gz ON (tr2.geo_zone_id = gz.geo_zone_id) WHERE tr1.based = 'store' AND tr2cg.customer_group_id = '1' AND z2gz.country_id = '176' AND (z2gz.zone_id = '0' OR z2gz.zone_id = '0') ORDER BY tr1.priority ASC in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-09 19:23:42 - PHP Notice:  Trying to get property of non-object in E:\OpenServer\domains\opencart-x.com\system\library\tax.php on line 56
+2016-12-09 19:23:42 - PHP Warning:  Invalid argument supplied for foreach() in E:\OpenServer\domains\opencart-x.com\system\library\tax.php on line 56
+2016-12-09 19:23:42 - PHP Notice:  Error: MySQL server has gone away<br />Error No: 2006<br />SELECT * FROM oc_weight_class wc LEFT JOIN oc_weight_class_description wcd ON (wc.weight_class_id = wcd.weight_class_id) WHERE wcd.language_id = '1' in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-09 19:23:42 - PHP Notice:  Trying to get property of non-object in E:\OpenServer\domains\opencart-x.com\system\library\weight.php on line 11
+2016-12-09 19:23:42 - PHP Warning:  Invalid argument supplied for foreach() in E:\OpenServer\domains\opencart-x.com\system\library\weight.php on line 11
+2016-12-09 19:23:42 - PHP Notice:  Error: MySQL server has gone away<br />Error No: 2006<br />SELECT * FROM oc_length_class mc LEFT JOIN oc_length_class_description mcd ON (mc.length_class_id = mcd.length_class_id) WHERE mcd.language_id = '1' in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-09 19:23:42 - PHP Notice:  Trying to get property of non-object in E:\OpenServer\domains\opencart-x.com\system\library\length.php on line 11
+2016-12-09 19:23:42 - PHP Warning:  Invalid argument supplied for foreach() in E:\OpenServer\domains\opencart-x.com\system\library\length.php on line 11
+2016-12-09 19:23:42 - PHP Notice:  Error: MySQL server has gone away<br />Error No: 2006<br />DELETE FROM oc_cart WHERE customer_id = '0' AND date_added < DATE_SUB(NOW(), INTERVAL 1 HOUR) in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-09 19:23:42 - PHP Notice:  Error: MySQL server has gone away<br />Error No: 2006<br />SELECT * FROM oc_extension WHERE `type` = 'openbay' in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-09 19:23:42 - PHP Notice:  Trying to get property of non-object in E:\OpenServer\domains\opencart-x.com\system\library\openbay.php on line 119
+2016-12-09 19:23:42 - PHP Warning:  Invalid argument supplied for foreach() in E:\OpenServer\domains\opencart-x.com\system\library\openbay.php on line 119
+2016-12-09 19:23:42 - PHP Notice:  Error: MySQL server has gone away<br />Error No: 2006<br />SELECT * FROM oc_event in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-09 19:23:42 - PHP Notice:  Trying to get property of non-object in E:\OpenServer\domains\opencart-x.com\index.php on line 250
+2016-12-09 19:23:42 - PHP Warning:  Invalid argument supplied for foreach() in E:\OpenServer\domains\opencart-x.com\index.php on line 250
+2016-12-09 19:23:42 - PHP Notice:  Undefined variable: query in E:\OpenServer\domains\opencart-x.com\catalog\controller\common\test.php on line 114
+2016-12-09 19:23:42 - PHP Notice:  Trying to get property of non-object in E:\OpenServer\domains\opencart-x.com\catalog\controller\common\test.php on line 114
+2016-12-09 19:23:42 - PHP Warning:  mysqli::query(): MySQL server has gone away in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 19
+2016-12-09 19:23:42 - PHP Warning:  mysqli::query(): Error reading result set's header in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 19
+2016-12-09 19:23:42 - PHP Notice:  Error: MySQL server has gone away<br />Error No: 2006<br />SELECT * FROM oc_currency in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-09 19:23:42 - PHP Notice:  Trying to get property of non-object in E:\OpenServer\domains\opencart-x.com\system\library\currency.php on line 15
+2016-12-09 19:23:42 - PHP Warning:  Invalid argument supplied for foreach() in E:\OpenServer\domains\opencart-x.com\system\library\currency.php on line 15
+2016-12-09 19:23:42 - PHP Notice:  Error: MySQL server has gone away<br />Error No: 2006<br />SELECT tr1.tax_class_id, tr2.tax_rate_id, tr2.name, tr2.rate, tr2.type, tr1.priority FROM oc_tax_rule tr1 LEFT JOIN oc_tax_rate tr2 ON (tr1.tax_rate_id = tr2.tax_rate_id) INNER JOIN oc_tax_rate_to_customer_group tr2cg ON (tr2.tax_rate_id = tr2cg.tax_rate_id) LEFT JOIN oc_zone_to_geo_zone z2gz ON (tr2.geo_zone_id = z2gz.geo_zone_id) LEFT JOIN oc_geo_zone gz ON (tr2.geo_zone_id = gz.geo_zone_id) WHERE tr1.based = 'shipping' AND tr2cg.customer_group_id = '1' AND z2gz.country_id = '176' AND (z2gz.zone_id = '0' OR z2gz.zone_id = '0') ORDER BY tr1.priority ASC in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-09 19:23:42 - PHP Notice:  Trying to get property of non-object in E:\OpenServer\domains\opencart-x.com\system\library\tax.php on line 28
+2016-12-09 19:23:42 - PHP Warning:  Invalid argument supplied for foreach() in E:\OpenServer\domains\opencart-x.com\system\library\tax.php on line 28
+2016-12-09 19:23:42 - PHP Notice:  Error: MySQL server has gone away<br />Error No: 2006<br />SELECT tr1.tax_class_id, tr2.tax_rate_id, tr2.name, tr2.rate, tr2.type, tr1.priority FROM oc_tax_rule tr1 LEFT JOIN oc_tax_rate tr2 ON (tr1.tax_rate_id = tr2.tax_rate_id) INNER JOIN oc_tax_rate_to_customer_group tr2cg ON (tr2.tax_rate_id = tr2cg.tax_rate_id) LEFT JOIN oc_zone_to_geo_zone z2gz ON (tr2.geo_zone_id = z2gz.geo_zone_id) LEFT JOIN oc_geo_zone gz ON (tr2.geo_zone_id = gz.geo_zone_id) WHERE tr1.based = 'store' AND tr2cg.customer_group_id = '1' AND z2gz.country_id = '176' AND (z2gz.zone_id = '0' OR z2gz.zone_id = '0') ORDER BY tr1.priority ASC in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-09 19:23:42 - PHP Notice:  Trying to get property of non-object in E:\OpenServer\domains\opencart-x.com\system\library\tax.php on line 56
+2016-12-09 19:23:42 - PHP Warning:  Invalid argument supplied for foreach() in E:\OpenServer\domains\opencart-x.com\system\library\tax.php on line 56
+2016-12-09 19:23:42 - PHP Notice:  Error: MySQL server has gone away<br />Error No: 2006<br />SELECT * FROM oc_weight_class wc LEFT JOIN oc_weight_class_description wcd ON (wc.weight_class_id = wcd.weight_class_id) WHERE wcd.language_id = '1' in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-09 19:23:42 - PHP Notice:  Trying to get property of non-object in E:\OpenServer\domains\opencart-x.com\system\library\weight.php on line 11
+2016-12-09 19:23:42 - PHP Warning:  Invalid argument supplied for foreach() in E:\OpenServer\domains\opencart-x.com\system\library\weight.php on line 11
+2016-12-09 19:23:42 - PHP Notice:  Error: MySQL server has gone away<br />Error No: 2006<br />SELECT * FROM oc_length_class mc LEFT JOIN oc_length_class_description mcd ON (mc.length_class_id = mcd.length_class_id) WHERE mcd.language_id = '1' in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-09 19:23:42 - PHP Notice:  Trying to get property of non-object in E:\OpenServer\domains\opencart-x.com\system\library\length.php on line 11
+2016-12-09 19:23:42 - PHP Warning:  Invalid argument supplied for foreach() in E:\OpenServer\domains\opencart-x.com\system\library\length.php on line 11
+2016-12-09 19:23:42 - PHP Notice:  Error: MySQL server has gone away<br />Error No: 2006<br />DELETE FROM oc_cart WHERE customer_id = '0' AND date_added < DATE_SUB(NOW(), INTERVAL 1 HOUR) in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-09 19:23:42 - PHP Notice:  Error: MySQL server has gone away<br />Error No: 2006<br />SELECT * FROM oc_extension WHERE `type` = 'openbay' in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-09 19:23:42 - PHP Notice:  Trying to get property of non-object in E:\OpenServer\domains\opencart-x.com\system\library\openbay.php on line 119
+2016-12-09 19:23:42 - PHP Warning:  Invalid argument supplied for foreach() in E:\OpenServer\domains\opencart-x.com\system\library\openbay.php on line 119
+2016-12-09 19:23:42 - PHP Notice:  Error: MySQL server has gone away<br />Error No: 2006<br />SELECT * FROM oc_event in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-09 19:23:42 - PHP Notice:  Trying to get property of non-object in E:\OpenServer\domains\opencart-x.com\index.php on line 250
+2016-12-09 19:23:42 - PHP Warning:  Invalid argument supplied for foreach() in E:\OpenServer\domains\opencart-x.com\index.php on line 250
+2016-12-09 19:23:42 - PHP Notice:  Undefined variable: query in E:\OpenServer\domains\opencart-x.com\catalog\controller\common\test.php on line 114
+2016-12-09 19:23:42 - PHP Notice:  Trying to get property of non-object in E:\OpenServer\domains\opencart-x.com\catalog\controller\common\test.php on line 114
+2016-12-09 19:23:54 - PHP Notice:  Undefined variable: query in E:\OpenServer\domains\opencart-x.com\catalog\controller\common\test.php on line 114
+2016-12-09 19:23:54 - PHP Notice:  Trying to get property of non-object in E:\OpenServer\domains\opencart-x.com\catalog\controller\common\test.php on line 114
+2016-12-09 19:24:03 - PHP Notice:  Undefined variable: query in E:\OpenServer\domains\opencart-x.com\catalog\controller\common\test.php on line 114
+2016-12-09 19:24:03 - PHP Notice:  Trying to get property of non-object in E:\OpenServer\domains\opencart-x.com\catalog\controller\common\test.php on line 114
+2016-12-09 19:24:05 - PHP Notice:  Undefined variable: query in E:\OpenServer\domains\opencart-x.com\catalog\controller\common\test.php on line 114
+2016-12-09 19:24:05 - PHP Notice:  Trying to get property of non-object in E:\OpenServer\domains\opencart-x.com\catalog\controller\common\test.php on line 114
+2016-12-09 19:25:46 - PHP Warning:  mysqli::multi_query(): MySQL server has gone away in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 46
+2016-12-09 19:25:46 - PHP Warning:  mysqli::multi_query(): Error while reading SET_OPTION's EOF packet. PID=3392 in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 46
+2016-12-09 19:25:46 - PHP Notice:  Error: Query execution was interrupted<br />Error No: 1317<br />CALL get_tree(27) in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 70
+2016-12-09 19:25:46 - PHP Notice:  Trying to get property of non-object in E:\OpenServer\domains\opencart-x.com\catalog\controller\common\test.php on line 114
+2016-12-09 19:30:02 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ';
+				SET results='';
+				
+				CREATE TEMPORARY TABLE IF NOT EXISTS temp_tabl' at line 3<br />Error No: 1064<br />
+			CREATE PROCEDURE get_tree(IN current_id INT)
+			BEGIN
+				DECLARE results VARCHAR;
+				SET results='';
+				
+				CREATE TEMPORARY TABLE IF NOT EXISTS temp_table AS (SELECT * FROM oc_test WHERE 1=0);
+				REPEAT
+					INSERT INTO temp_table SELECT * FROM oc_test WHERE id=current_id;
+					SELECT parent_id INTO current_id FROM oc_test WHERE id=current_id;
+				UNTIL current_id = 0
+				END REPEAT;
+				SELECT name FROM temp_table;
+				DROP TABLE temp_table;
+			END
+		 in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-09 19:30:02 - PHP Notice:  Error: PROCEDURE opencart_x.get_tree does not exist<br />Error No: 1305<br />CALL get_tree(27) in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 70
+2016-12-09 19:30:02 - PHP Notice:  Trying to get property of non-object in E:\OpenServer\domains\opencart-x.com\catalog\controller\common\test.php on line 114
+2016-12-09 19:33:28 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DEFAULT current_id;
+				
+				CREATE TEMPORARY TABLE IF NOT EXISTS temp_table A' at line 3<br />Error No: 1064<br />
+			CREATE PROCEDURE get_tree(IN current_id INT)
+			BEGIN
+				DECLARE tree VARCHAR DEFAULT current_id;
+				
+				CREATE TEMPORARY TABLE IF NOT EXISTS temp_table AS (SELECT * FROM oc_test WHERE 1=0);
+				REPEAT
+					INSERT INTO temp_table SELECT * FROM oc_test WHERE id=current_id;
+					SELECT parent_id INTO current_id FROM oc_test WHERE id=current_id;
+				UNTIL current_id = 0
+				END REPEAT;
+				SELECT name FROM temp_table;
+				DROP TABLE temp_table;
+			END
+		 in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-09 19:33:28 - PHP Notice:  Error: PROCEDURE opencart_x.get_tree does not exist<br />Error No: 1305<br />CALL get_tree(27) in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 70
+2016-12-09 19:33:28 - PHP Notice:  Trying to get property of non-object in E:\OpenServer\domains\opencart-x.com\catalog\controller\common\test.php on line 114
+2016-12-09 19:33:59 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DEFAULT 'sdfsfd';
+				
+				CREATE TEMPORARY TABLE IF NOT EXISTS temp_table AS ' at line 3<br />Error No: 1064<br />
+			CREATE PROCEDURE get_tree(IN current_id INT)
+			BEGIN
+				DECLARE tree VARCHAR DEFAULT 'sdfsfd';
+				
+				CREATE TEMPORARY TABLE IF NOT EXISTS temp_table AS (SELECT * FROM oc_test WHERE 1=0);
+				REPEAT
+					INSERT INTO temp_table SELECT * FROM oc_test WHERE id=current_id;
+					SELECT parent_id INTO current_id FROM oc_test WHERE id=current_id;
+				UNTIL current_id = 0
+				END REPEAT;
+				SELECT name FROM temp_table;
+				DROP TABLE temp_table;
+			END
+		 in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-09 19:33:59 - PHP Notice:  Error: PROCEDURE opencart_x.get_tree does not exist<br />Error No: 1305<br />CALL get_tree(27) in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 70
+2016-12-09 19:33:59 - PHP Notice:  Trying to get property of non-object in E:\OpenServer\domains\opencart-x.com\catalog\controller\common\test.php on line 114
+2016-12-09 19:34:16 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DEFAULT 'sdfsfd';
+				
+				CREATE TEMPORARY TABLE IF NOT EXISTS temp_table AS ' at line 3<br />Error No: 1064<br />
+			CREATE PROCEDURE get_tree(IN current_id INT)
+			BEGIN
+				DECLARE tree VARCHAR DEFAULT 'sdfsfd';
+				
+				CREATE TEMPORARY TABLE IF NOT EXISTS temp_table AS (SELECT * FROM oc_test WHERE 1=0);
+				REPEAT
+					INSERT INTO temp_table SELECT * FROM oc_test WHERE id=current_id;
+					SELECT parent_id INTO current_id FROM oc_test WHERE id=current_id;
+				UNTIL current_id = 0
+				END REPEAT;
+				SELECT name FROM temp_table;
+				DROP TABLE temp_table;
+			END
+		 in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-09 20:07:20 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')
+			BEGIN
+				DECLARE tree VARCHAR(255) DEFAULT current_id;
+				
+				WHILE ' at line 1<br />Error No: 1064<br />
+			CREATE PROCEDURE get_tree(IN current_id INT, OUT res VARCHAR)
+			BEGIN
+				DECLARE tree VARCHAR(255) DEFAULT current_id;
+				
+				WHILE current_id <> 0 DO
+					SELECT parent_id INTO current_id FROM oc_test WHERE id=current_id;
+					SET tree = CONCAT(tree, ',', current_id);
+				END WHILE;
+				
+				SET res = tree;
+				
+				# SELECT name FROM oc_test WHERE id IN (tree);
+			END
+		 in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-09 20:07:20 - PHP Notice:  Error: PROCEDURE opencart_x.get_tree does not exist<br />Error No: 1305<br />CALL get_tree(27) in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 70
+2016-12-09 20:07:20 - PHP Notice:  Trying to get property of non-object in E:\OpenServer\domains\opencart-x.com\catalog\controller\common\test.php on line 114
+2016-12-09 20:07:42 - PHP Notice:  Error: Incorrect number of arguments for PROCEDURE opencart_x.get_tree; expected 2, got 1<br />Error No: 1318<br />CALL get_tree(27) in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 70
+2016-12-09 20:07:42 - PHP Notice:  Trying to get property of non-object in E:\OpenServer\domains\opencart-x.com\catalog\controller\common\test.php on line 114
+2016-12-09 21:51:46 - PHP Notice:  Error: Commands out of sync; you can't run this command now<br />Error No: 2014<br />CALL get_tree(27) in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-09 21:51:46 - PHP Notice:  Trying to get property of non-object in E:\OpenServer\domains\opencart-x.com\catalog\controller\common\test.php on line 117
+2016-12-09 21:55:56 - PHP Notice:  Undefined variable: i in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 51
+2016-12-09 21:55:56 - PHP Warning:  Division by zero in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 51
+2016-12-09 22:09:38 - PHP Notice:  Trying to get property of non-object in E:\OpenServer\domains\opencart-x.com\catalog\controller\common\test.php on line 116
+2016-12-09 22:10:32 - PHP Notice:  Trying to get property of non-object in E:\OpenServer\domains\opencart-x.com\catalog\controller\common\test.php on line 118
+2016-12-09 22:29:25 - PHP Notice:  Error: Incorrect number of arguments for PROCEDURE opencart_x.get_tree; expected 1, got 2<br />Error No: 1318<br />CALL get_tree(27, @tree) in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-09 22:30:42 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'SELECT name FROM oc_test WHERE FIND_IN_SET(id, @tree)' at line 1<br />Error No: 1064<br />CALL get_tree(27, @tree); SELECT name FROM oc_test WHERE FIND_IN_SET(id, @tree); in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-09 22:33:12 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'SELECT name FROM oc_test' at line 1<br />Error No: 1064<br />CALL get_tree(27, @tree); SELECT name FROM oc_test in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-09 22:34:32 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'SELECT @tree' at line 1<br />Error No: 1064<br />CALL get_tree(27, @tree); SELECT @tree in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-09 22:34:38 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'SELECT @tree' at line 1<br />Error No: 1064<br />CALL get_tree(27, @tree) SELECT @tree in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-10 0:02:02 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'SELECT * FROM oc_test
+			END' at line 2<br />Error No: 1064<br />
+			BEGIN
+				SELECT * FROM oc_test
+			END
+		 in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-10 0:02:22 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'SELECT * FROM oc_test
+			END' at line 2<br />Error No: 1064<br />
+			BEGIN
+				SELECT * FROM oc_test
+			END
+		 in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 75
+2016-12-10 0:02:36 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'SELECT * FROM oc_test;
+			END' at line 2<br />Error No: 1064<br />
+			BEGIN
+				SELECT * FROM oc_test;
+			END
+		 in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-10 0:06:10 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'REPEAT
+				LEFT JOIN oc_product p ON t.id=p.product_id
+			UNTIL 1 = 2
+			END ' at line 4<br />Error No: 1064<br />
+			SELECT
+				*
+			FROM oc_test t
+			REPEAT
+				LEFT JOIN oc_product p ON t.id=p.product_id
+			UNTIL 1 = 2
+			END REPEAT
+		 in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-10 0:13:58 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'CALL get_tree(27, @ddd))' at line 1<br />Error No: 1064<br />
+			SELECT * FROM oc_test WHERE id IN (CALL get_tree(27, @ddd))
+		 in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-10 0:15:41 - PHP Notice:  Error: Not unique table/alias: 'oc_test'<br />Error No: 1066<br />
+			SELECT
+				*
+			FROM oc_test
+			LEFT JOIN oc_test ON oc_test.id=oc_test.id
+		 in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-10 0:15:58 - PHP Notice:  Error: Unknown column 'oc_test.id' in 'on clause'<br />Error No: 1054<br />
+			SELECT
+				*
+			FROM oc_test t1
+			LEFT JOIN oc_test t2 ON oc_test.id=oc_test.id
+		 in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-10 0:18:16 - PHP Notice:  Error: Column 'name' in field list is ambiguous<br />Error No: 1052<br />
+			SELECT
+				name
+			FROM oc_test t1
+			LEFT JOIN oc_test t2 ON t1.id=t2.id
+			WHERE t1.id=27
+		 in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-10 0:18:16 - PHP Notice:  Trying to get property of non-object in E:\OpenServer\domains\opencart-x.com\catalog\controller\common\test.php on line 123
+2016-12-10 0:21:25 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'INTO @myVar WHERE t1.id=27)
+			WHERE t1.id=27' at line 4<br />Error No: 1064<br />
+			SELECT
+				t1.name
+			FROM oc_test t1
+			LEFT JOIN oc_test t2 ON (SELECT t1.parent_id INTO @myVar WHERE t1.id=27)
+			WHERE t1.id=27
+		 in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-10 0:21:25 - PHP Notice:  Trying to get property of non-object in E:\OpenServer\domains\opencart-x.com\catalog\controller\common\test.php on line 123
+2016-12-10 0:23:02 - PHP Notice:  Trying to get property of non-object in E:\OpenServer\domains\opencart-x.com\catalog\controller\common\test.php on line 128
+2016-12-10 0:23:32 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'INTO @myVar FROM t1 WHERE t1.id=27)
+			WHERE t1.id=27' at line 4<br />Error No: 1064<br />
+			SELECT
+				t1.name
+			FROM oc_test t1
+			LEFT JOIN oc_test t2 ON (SELECT t1.parent_id INTO @myVar FROM t1 WHERE t1.id=27)
+			WHERE t1.id=27
+		 in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-10 0:23:32 - PHP Notice:  Trying to get property of non-object in E:\OpenServer\domains\opencart-x.com\catalog\controller\common\test.php on line 126
+2016-12-10 0:23:45 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'INTO @myVar FROM oc_test WHERE t1.id=27)
+			WHERE t1.id=27' at line 4<br />Error No: 1064<br />
+			SELECT
+				t1.name
+			FROM oc_test t1
+			LEFT JOIN oc_test t2 ON (SELECT t1.parent_id INTO @myVar FROM oc_test WHERE t1.id=27)
+			WHERE t1.id=27
+		 in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-10 0:23:45 - PHP Notice:  Trying to get property of non-object in E:\OpenServer\domains\opencart-x.com\catalog\controller\common\test.php on line 126
+2016-12-10 0:24:19 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'INTO @myVar FROM t1 WHERE t1.id=27)
+			WHERE t1.id=27' at line 4<br />Error No: 1064<br />
+			SELECT
+				t1.name
+			FROM oc_test t1
+			LEFT JOIN oc_test t2 ON t1.id=(SELECT t1.id INTO @myVar FROM t1 WHERE t1.id=27)
+			WHERE t1.id=27
+		 in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-10 0:24:19 - PHP Notice:  Trying to get property of non-object in E:\OpenServer\domains\opencart-x.com\catalog\controller\common\test.php on line 126
+2016-12-10 0:24:27 - PHP Notice:  Error: Table 'opencart_x.t1' doesn't exist<br />Error No: 1146<br />
+			SELECT
+				t1.name
+			FROM oc_test t1
+			LEFT JOIN oc_test t2 ON t1.id=(SELECT t1.id FROM t1 WHERE t1.id=27)
+			WHERE t1.id=27
+		 in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-10 0:24:27 - PHP Notice:  Trying to get property of non-object in E:\OpenServer\domains\opencart-x.com\catalog\controller\common\test.php on line 126
+2016-12-10 0:24:44 - PHP Warning:  mysqli::query(): (21000/1242): Subquery returns more than 1 row in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 19
+2016-12-10 0:24:44 - PHP Notice:  Error: Subquery returns more than 1 row<br />Error No: 1242<br />
+			SELECT
+				t1.name
+			FROM oc_test t1
+			LEFT JOIN oc_test t2 ON t1.id=(SELECT t1.id FROM oc_test WHERE t1.id=27)
+			WHERE t1.id=27
+		 in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-10 0:24:44 - PHP Notice:  Trying to get property of non-object in E:\OpenServer\domains\opencart-x.com\catalog\controller\common\test.php on line 126
+2016-12-10 0:28:07 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'INTO @myVar FROM oc_test WHERE id=t1.id))
+			WHERE t1.id=@myVar' at line 4<br />Error No: 1064<br />
+			SELECT
+				t1.name
+			FROM oc_test t1
+			LEFT JOIN oc_test t2 ON (t1.id=t2.id AND (SELECT parent_id INTO @myVar FROM oc_test WHERE id=t1.id))
+			WHERE t1.id=@myVar
+		 in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-10 0:28:07 - PHP Notice:  Trying to get property of non-object in E:\OpenServer\domains\opencart-x.com\catalog\controller\common\test.php on line 126
+2016-12-10 0:38:04 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'INTO name FROM oc_test WHERE id=27) b ON 1 < 2
+			WHERE t1.id=27' at line 4<br />Error No: 1064<br />
+			SELECT
+				t1.name
+			FROM oc_test t1
+			LEFT JOIN (SELECT parent_id INTO name FROM oc_test WHERE id=27) b ON 1 < 2
+			WHERE t1.id=27
+		 in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-10 0:38:04 - PHP Notice:  Trying to get property of non-object in E:\OpenServer\domains\opencart-x.com\catalog\controller\common\test.php on line 126
+2016-12-10 0:40:17 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'INTO @myVar FROM oc_test WHERE id=27) b ON 1 < 2
+			WHERE t1.id=27' at line 4<br />Error No: 1064<br />
+			SELECT
+				t1.name
+			FROM oc_test t1
+			LEFT JOIN (SELECT parent_id INTO @myVar FROM oc_test WHERE id=27) b ON 1 < 2
+			WHERE t1.id=27
+		 in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-10 0:40:17 - PHP Notice:  Trying to get property of non-object in E:\OpenServer\domains\opencart-x.com\catalog\controller\common\test.php on line 126
+2016-12-10 0:51:23 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'INTO @myVar FROM oc_test WHERE id=27) AS var2
+			FROM oc_test t1
+			LEFT JOIN ' at line 3<br />Error No: 1064<br />
+			SELECT
+				t1.name,
+				(SELECT name INTO @myVar FROM oc_test WHERE id=27) AS var2
+			FROM oc_test t1
+			LEFT JOIN oc_test t2 ON t1.id=t2.id
+			WHERE t2.id>0
+		 in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-10 0:51:23 - PHP Notice:  Trying to get property of non-object in E:\OpenServer\domains\opencart-x.com\catalog\controller\common\test.php on line 127
+2016-12-10 1:07:58 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE parent_id=@pv' at line 6<br />Error No: 1064<br />
+			SELECT 
+				@pv:=id as id,
+				name
+			FROM oc_test
+			LEFT JOIN (SELECT @pv:=27) tmp
+			WHERE parent_id=@pv
+		 in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-10 1:07:58 - PHP Notice:  Trying to get property of non-object in E:\OpenServer\domains\opencart-x.com\catalog\controller\common\test.php on line 129

@@ -16,9 +16,9 @@ trait Order {
 	private function _order() {
 		if($this->sortField) {
 			return " ORDER BY ".$this->field($this->sortField)." ".$this->sortOrder;
+		} else {
+			return " ORDER BY ".$this->getPrimaryKey()." ".$this->sortOrder;
 		}
-		
-		return '';
 	}
 	
 }

@@ -51,23 +51,29 @@ trait Conditions {
 		return $this;
 	}
 	
-	public function first() {
-		$this->single = true;
+	public function first($limit = 1) {
+		if($limit == 1) {
+			$this->single = true;
+		}
 		
-		$this->limit(1);
-		
-		return $this;
-	}
-	
-	public function last() {
-		$this->single = true;
-		
-		$this->limit(1);
+		$this->limit($limit);
 		
 		return $this;
 	}
 	
-	public function random($limit = 0) {
+	public function last($limit = 1) {
+		if($limit == 1) {
+			$this->single = true;
+		}
+		
+		$this->limit($limit);
+		
+		$this->sortOrder = $this->sortOrder == 'DESC' ? 'ASC' : 'DESC';
+		
+		return $this;
+	}
+	
+	public function random($limit = 1) {
 		if($limit == 1) {
 			$this->single = true;
 		}
