@@ -1,7 +1,6 @@
 <?php
 $host = $_SERVER['HTTP_HOST'];
-$dir = str_replace('\\', '/', dirname(__FILE__));
-$dir = str_replace('/admin', '', $dir);
+$dir = str_replace('\\', '/', dirname(dirname(__FILE__)));
 
 // HTTP
 define('HTTP_SERVER',  'http://'.$host.'/admin/');
