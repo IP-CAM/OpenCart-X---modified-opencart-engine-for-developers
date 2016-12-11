@@ -3,7 +3,6 @@ namespace db\QueryBuilder\Common;
 
 trait Conditions {
 	
-	private $single = false;
 	private $conditions_sql = '';
 	
 	public function where($field, $operator = '=', $value = null) {
@@ -21,11 +20,11 @@ trait Conditions {
 	}
 	
 	public function whereIn($field, $keys) {
-		return $this->whereRaw($this->field($field)." IN (".$this->implodeValues($keys).")");
+		return $this->whereRaw($this->_field($field)." IN (".$this->implodeValues($keys).")");
 	}
 	
 	public function whereNotIn($keys) {
-		return $this->whereRaw($this->field($field)." NOT IN (".$this->implodeValues($keys).")");
+		return $this->whereRaw($this->_field($field)." NOT IN (".$this->implodeValues($keys).")");
 	}
 	
 	public function orWhere($field, $operator = '=', $value = null) {
@@ -42,7 +41,6 @@ trait Conditions {
 	
 	public function find($keys) {
 		if(is_int($keys) or is_string($keys)) {
-			$this->single = true;
 			$this->where($this->getPrimaryKey(), $keys);
 		} else {
 			$this->whereIn($this->getPrimaryKey(), $keys);
@@ -52,31 +50,23 @@ trait Conditions {
 	}
 	
 	public function first($limit = 1) {
-		if($limit == 1) {
-			$this->single = true;
-		}
-		
 		$this->limit($limit);
 		
 		return $this;
 	}
 	
 	public function last($limit = 1) {
-		if($limit == 1) {
-			$this->single = true;
-		}
-		
 		$this->limit($limit);
 		
-		$this->sortOrder = $this->sortOrder == 'DESC' ? 'ASC' : 'DESC';
+		$this->sortOrder = $this->sortOrder == "DESC" ? "ASC" : "DESC";
 		
 		return $this;
 	}
 	
 	public function random($limit = 1) {
-		if($limit == 1) {
-			$this->single = true;
-		}
+		$this->limit($limit);
+		
+		$this->sortField = "RAND()";
 		
 		return $this;
 	}

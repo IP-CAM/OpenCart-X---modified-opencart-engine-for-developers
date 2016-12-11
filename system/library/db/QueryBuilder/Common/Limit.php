@@ -3,30 +3,38 @@ namespace db\QueryBuilder\Common;
 
 trait Limit {
 	
-	private $page;
-	private $limit;
+	private $limitOffset;
+	private $limitCount = 15;
 	
-	public function page($page) {
-		$page = intval($page);
-		$this->page = $page > 0 ? $page : 1;
+	public function limit($count) {
+		$count = intval($count);
+		$this->limitCount = $count > 0 ? $count : 1;
 		
 		return $this;
 	}
 	
-	public function limit($limit) {
-		$limit = intval($limit);
-		$this->limit = $limit > 0 ? $limit : 1;
+	public function skip($count) {
+		$this->limitOffset = intval($count);
+		
+		return $this;
+	}
+	
+	public function page($page) {
+		$page = intval($page);
+		$page = $page > 0 ? $page : 1;
+		
+		$this->limitOffset = ($page - 1) * $this->limitCount;
 		
 		return $this;
 	}
 	
 	public function _limit() {
-		if($this->limit && $this->page) {
-			return " LIMIT ".(($this->page - 1) * $this->limit).",".$this->limit;
+		if($this->limitCount && $this->limitOffset) {
+			return " LIMIT ".$this->limitOffset.",".$this->limitCount;
 		}
 		
-		if($this->limit && !$this->page) {
-			return " LIMIT ".$this->limit;
+		if($this->limitCount && !$this->limitOffset) {
+			return " LIMIT ".$this->limitCount;
 		}
 		
 		return "";

@@ -4,21 +4,21 @@ namespace db\QueryBuilder\Common;
 trait Order {
 	
 	private $sortField;
-	private $sortOrder;
+	private $sortOrder = "ASC";
 	
-	public function sortBy($field, $order = 'ASC') {
+	public function sortBy($field, $order = "ASC") {
 		$this->sortField = $field;
-		$this->sortOrder = $order;
+		$this->sortOrder = strtoupper($order);
 		
 		return $this;
 	}
 	
 	private function _order() {
-		if($this->sortField) {
-			return " ORDER BY ".$this->field($this->sortField)." ".$this->sortOrder;
-		} else {
-			return " ORDER BY ".$this->getPrimaryKey()." ".$this->sortOrder;
+		if(!$this->sortField) {
+			$this->sortField = $this->_field($this->getPrimaryKey());
 		}
+		
+		return " ORDER BY ".$this->sortField." ".$this->sortOrder;
 	}
 	
 }

@@ -3,32 +3,32 @@ namespace db\QueryBuilder\Operations;
 
 trait Select {
 	
+	use Join;
+	
 	public function get($fields = null) {
 		$fields_sql = "*";
 		
 		if(is_array($fields)) {
 			$tmp = array();
 			
-			if(is_array_assoc($fields)) {				
-				foreach($fields as $field => $alias) {
-					$tmp[] = $this->field($field)." AS `".$alias."`";
-				}
-			} else {
-				foreach($fields as $field) {
-					$tmp[] = $this->field($field);
+			foreach($fields as $field => $alias) {
+				if(is_int($field)) {
+					$tmp[] = $this->_field($alias);
+				} else {
+					$tmp[] = $this->_field($field)." AS `".$alias."`";
 				}
 			}
 			
 			$fields_sql = implode(',', $tmp);
 		} else if(is_string($fields)) {
-			$fields_sql = $this->field($fields);
+			$fields_sql = $this->_field($fields);
 		}
 		
-		$sql = "SELECT ".$fields_sql." FROM ".$this->_table().$this->_where().$this->_order().$this->_limit();
+		$sql = "SELECT ".$fields_sql." FROM ".$this->_tableAsAlias().$this->_joins().$this->_where().$this->_order().$this->_limit();
 		
 		$result = $this->execute($sql);
 		
-		if($this->single) {
+		if($this->single()) {
 			return $result->row;
 		} else {
 			return $result->rows;
@@ -38,7 +38,7 @@ trait Select {
 	public function value($field) {
 		$rows = $this->get($field);
 		
-		if($this->single) {
+		if($this->single()) {
 			if(isset($rows[$field])) {
 				return $rows[$field];
 			} else {
@@ -59,6 +59,10 @@ trait Select {
 		$sql = "SELECT COUNT(*) AS total FROM ".$this->_table().$this->_where();
 		$result = $this->execute($sql);
 		return $result->row['total'];
+	}
+	
+	private function single() {
+		return $this->limitCount == 1;
 	}
 	
 }

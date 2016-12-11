@@ -16,19 +16,19 @@ trait Update {
 	}
 	
 	public function increment($field) {
-		$fields_sql = $this->field($field)."=(".$this->field($field)." + 1)";
+		$fields_sql = $this->_field($field)."=(".$this->field($field)." + 1)";
 		
 		$this->_update($fields_sql);
 	}
 	
 	public function decrement($field) {
-		$fields_sql = $this->field($field)."=(".$this->field($field)." - 1)";
+		$fields_sql = $this->_field($field)."=(".$this->field($field)." - 1)";
 		
 		$this->_update($fields_sql);
 	}
 	
 	public function toggle($field) {
-		$fields_sql = $this->field($field)."=(NOT ".$this->field($field).")";
+		$fields_sql = $this->_field($field)."=(NOT ".$this->field($field).")";
 		
 		$this->_update($fields_sql);
 	}

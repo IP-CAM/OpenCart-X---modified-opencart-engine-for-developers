@@ -11,13 +11,24 @@ class ControllerCommonTest extends Controller {
 		$result = DB::table('product')->find([28, 29])->sortBy('product_id', 'DESC')->get();
 		print_r($result);
 		
-		$result = DB::table('product')->limit(10)->page(1)->get();
+		// limits
+		$result = DB::table('product')->page(2)->get();
+		$result = DB::table('product')->limit(10)->page(2)->get();
+		$result = DB::table('product')->limit(10)->skip(15)->get();
 		print_r($result);
 		
+		$result = DB::table('product')->first()->get();
 		$result = DB::table('product')->first(10)->get();
+		$result = DB::table('product')->first(10)->page(2)->get();
+		$result = DB::table('product')->first(10)->skip(5)->get();
 		print_r($result);
 		
-		$result = DB::table('product')->last()->get(['name', 'password']);
+		$result = DB::table('product')->last()->get();
+		$result = DB::table('product')->last(10)->get();
+		print_r($result);
+		
+		$result = DB::table('product')->random()->get();
+		$result = DB::table('product')->random(10)->get();
 		print_r($result);
 		*/
 		

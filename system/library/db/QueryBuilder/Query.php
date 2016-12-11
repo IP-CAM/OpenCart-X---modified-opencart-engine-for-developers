@@ -16,26 +16,33 @@ class Query {
 	private $driver;
 	private $table;
 	
-	public function __construct($table = null) {
+	private $tableAliases = array();
+	
+	public function __construct($table) {
 		$this->driver = \Registry::getInstance()->get('db');
+		
+		$table = DB_PREFIX.$table;
+		
+		if(strpos($table, ' ') !== false) {
+			$tmp = explode(' ', $table);
+			
+			$table = $tmp[0];
+			$alias = $tmp[1];
+		} else {
+			$alias = $table;
+		}
+		
+		$this->addTableAlias($table, $alias);
+		
 		$this->setTable($table);
 	}
 	
 	public function setTable($table) {
-		$this->table = DB_PREFIX.$this->escape($table);
+		$this->table = $this->escape($table);
 	}
 	
-	public function execute($sql) {
-		return $this->driver->query($sql);
-	}
-	
-	private function field($field) {
-		if(strpos($field, '.') !== false) {
-			$tmp = explode('.', $field);
-			return $this->_table($tmp[0]).".`".$tmp[1]."`";
-		}
-		
-		return $this->_table().".`".$this->escape($field)."`";
+	public function addTableAlias($table, $alias) {
+		$this->tableAliases[$table] = $alias;
 	}
 	
 	private function _table($table = null) {
@@ -43,11 +50,41 @@ class Query {
 			$table = $this->table;
 		}
 		
-		return "`".$this->tableAlias($table)."`";
+		return "`".$table."`";
 	}
 	
-	private function tableAlias($table) {
+	private function _tableAlias($table = null) {
+		if(is_null($table)) {
+			$table = $this->table;
+		}
+		
+		if(isset($this->tableAliases[$table])) {
+			$alias = $this->tableAliases[$table];
+		} else {
+			$alias = $table;
+		}
+		
+		return "`".$alias."`";
+	}
+	
+	private function _tableAsAlias($table = null) {
+		$alias = $this->_tableAlias($table);
+		$table = $this->_table($table);
+		
+		if($table != $alias) {
+			return $table." AS ".$alias;
+		}
+		
 		return $table;
+	}
+	
+	private function _field($field) {
+		if(strpos($field, '.') !== false) {
+			$tmp = explode('.', $field);
+			return $this->_tableAlias($tmp[0]).".`".$tmp[1]."`";
+		}
+		
+		return $this->_tableAlias().".`".$this->escape($field)."`";
 	}
 	
 	private function fieldToValue($field, $operator, $value = null) {
@@ -56,7 +93,12 @@ class Query {
 			$operator = "=";
 		}
 		
-		return $this->field($field).$operator."'".$this->escape($value)."'";
+		return $this->_field($field).$operator."'".$this->escape($value)."'";
+	}
+	
+	public function execute($sql) {
+		echo $sql;
+		return $this->driver->query($sql);
 	}
 	
 	private function escape($value) {
