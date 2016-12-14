@@ -100,7 +100,7 @@ trait Conditions {
 	
 	private function appendCondition($condition, $operator = 'AND') {
 		if(!$this->conditions_sql and $condition) {
-			$this->conditions_sql = " WHERE (".$condition.")";
+			$this->conditions_sql = PHP_EOL."WHERE (".$condition.")";
 		} else {
 			$this->conditions_sql .= " ".$operator." (".$condition.")";
 		}

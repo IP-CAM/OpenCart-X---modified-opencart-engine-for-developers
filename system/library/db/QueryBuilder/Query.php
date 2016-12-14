@@ -21,6 +21,16 @@ class Query {
 	public function __construct($table) {
 		$this->driver = \Registry::getInstance()->get('db');
 		
+		$table = $this->addTable($table);
+		
+		$this->setTable($table);
+	}
+	
+	public function setTable($table) {
+		$this->table = $this->escape($table);
+	}
+	
+	public function addTable($table) {
 		$table = DB_PREFIX.$table;
 		
 		if(strpos($table, ' ') !== false) {
@@ -32,17 +42,9 @@ class Query {
 			$alias = $table;
 		}
 		
-		$this->addTableAlias($table, $alias);
-		
-		$this->setTable($table);
-	}
-	
-	public function setTable($table) {
-		$this->table = $this->escape($table);
-	}
-	
-	public function addTableAlias($table, $alias) {
 		$this->tableAliases[$table] = $alias;
+		
+		return $table;
 	}
 	
 	private function _table($table = null) {
@@ -97,7 +99,6 @@ class Query {
 	}
 	
 	public function execute($sql) {
-		echo $sql;
 		return $this->driver->query($sql);
 	}
 	

@@ -7,8 +7,7 @@ trait Limit {
 	private $limitCount = 15;
 	
 	public function limit($count) {
-		$count = intval($count);
-		$this->limitCount = $count > 0 ? $count : 1;
+		$this->limitCount = intval($count);
 		
 		return $this;
 	}
@@ -30,11 +29,11 @@ trait Limit {
 	
 	public function _limit() {
 		if($this->limitCount && $this->limitOffset) {
-			return " LIMIT ".$this->limitOffset.",".$this->limitCount;
+			return PHP_EOL."LIMIT ".$this->limitOffset.",".$this->limitCount;
 		}
 		
 		if($this->limitCount && !$this->limitOffset) {
-			return " LIMIT ".$this->limitCount;
+			return PHP_EOL."LIMIT ".$this->limitCount;
 		}
 		
 		return "";

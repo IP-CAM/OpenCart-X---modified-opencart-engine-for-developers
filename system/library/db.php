@@ -1,6 +1,9 @@
 <?php
 class DB {
 	private $db;
+	
+	private static $log = array();
+	private static $logEnabled = false;
 
 	public function __construct($driver, $hostname, $username, $password, $database, $port = NULL) {
 		$class = 'DB\\' . $driver;
@@ -13,6 +16,10 @@ class DB {
 	}
 
 	public function query($sql) {
+		if(self::$logEnabled) {
+			self::$log[] = $sql;
+		}
+		
 		return $this->db->query($sql);
 	}
 	
@@ -34,6 +41,28 @@ class DB {
 	
 	public static function table($table) {
 		return new db\QueryBuilder\Query($table);
+	}
+	
+	public static function enableLog() {
+		self::$logEnabled = true;
+	}
+	
+	public static function getLog() {
+		return self::$log;
+	}
+	
+	public static function getLastQuery() {
+		if(!self::$log) {
+			return 'No queries executed! Write "DB::enableLog();" before query execution.';
+		}
+		
+		return self::$log[count(self::$log) - 1];
+	}
+	
+	public static function printLastQuery() {
+		echo '<pre>';
+		echo self::getLastQuery();
+		echo '</pre>';
 	}
 	
 }

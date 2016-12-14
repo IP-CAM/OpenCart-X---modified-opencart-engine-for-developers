@@ -18,7 +18,7 @@ trait Order {
 			$this->sortField = $this->_field($this->getPrimaryKey());
 		}
 		
-		return " ORDER BY ".$this->sortField." ".$this->sortOrder;
+		return PHP_EOL."ORDER BY ".$this->sortField." ".$this->sortOrder;
 	}
 	
 }

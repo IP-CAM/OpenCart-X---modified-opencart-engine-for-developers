@@ -2,9 +2,16 @@
 class ControllerCommonTest extends Controller {
 	
 	public function index() {
-		echo '<pre>';
+		
+		DB::enableLog();
+		
+		DB::table('product p')->crossJoin('store s')->get(['p.product_id', 's.store_id']);
 		
 		/* GET --------------------- *
+		DB::table('product')->get();
+		DB::table('product')->all();
+		DB::table('product')->count();
+		
 		$name = DB::table('customer')->where('name', 'вася')->value('name');
 		echo $name;
 		
@@ -67,7 +74,8 @@ class ControllerCommonTest extends Controller {
 		DB::table('test')->clear();
 		*/
 		
-		echo '</pre>';
+		DB::printLastQuery();
+		
 	}
 	
 	
