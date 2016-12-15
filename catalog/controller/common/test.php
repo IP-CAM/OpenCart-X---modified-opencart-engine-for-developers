@@ -5,7 +5,14 @@ class ControllerCommonTest extends Controller {
 		
 		DB::enableLog();
 		
-		DB::table('product p')->crossJoin('store s')->get(['p.product_id', 's.store_id']);
+		DB::table('product p')
+			->crossJoin('store s')
+			->leftJoin('product_image pi', 'product_id')
+			->leftJoin('product_image pi2', [])
+			->rightJoin('product_special ps', 'p.product_id', 'ps.product_id')
+			->where('s.store_id', '>', 'p.product_id')
+			->orWhere('pi.product_id', 'ps.price')
+			->get(['p.product_id', 's.store_id']);
 		
 		/* GET --------------------- *
 		DB::table('product')->get();

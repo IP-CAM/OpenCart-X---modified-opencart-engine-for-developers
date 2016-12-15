@@ -47,7 +47,7 @@ class DB {
 		self::$logEnabled = true;
 	}
 	
-	public static function getLog() {
+	public static function getExecutedQueries() {
 		return self::$log;
 	}
 	

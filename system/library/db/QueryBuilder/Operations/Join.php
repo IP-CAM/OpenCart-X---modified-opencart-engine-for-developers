@@ -13,7 +13,7 @@ trait Join {
 		return $this;
 	}
 	
-	public function leftJoin() {
+	public function leftJoin($table, $key1, $key2 = null) {
 		$table = $this->addTable($table);
 		
 		$this->joins[] = $this->createJoinSql("LEFT OUTER JOIN", $table, $key1, $key2);
@@ -21,7 +21,7 @@ trait Join {
 		return $this;
 	}
 	
-	public function rightJoin() {
+	public function rightJoin($table, $key1, $key2 = null) {
 		$table = $this->addTable($table);
 		
 		$this->joins[] = $this->createJoinSql("RIGHT OUTER JOIN", $table, $key1, $key2);
@@ -42,10 +42,22 @@ trait Join {
 	}
 	
 	private function parseJoinConditions($key1, $key2) {
-		if(is_null($key1)) {
-			return "";
+		if(is_string($key1) and is_null($key2)) {
+			return " USING (`".$this->escape($key1)."`)";
 		}
 		
+		if(is_string($key1) and is_string($key2)) {
+			return " ON (".$this->_field($key1)."=".$this->_field($key2).")";
+		}
+		
+		if(is_array($key1) and is_null($key2)) {
+			return $this->arrayToJoinConditions($key1);
+		}
+		
+		return "";
+	}
+	
+	private function arrayToJoinConditions($arr) {
 		return "";
 	}
 	
