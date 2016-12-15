@@ -4,6 +4,7 @@ namespace db\QueryBuilder\Operations;
 trait Select {
 	
 	use Join;
+	use Aggregates;
 	
 	public function get($fields = null) {
 		$fields_sql = $this->prepareFieldsToSelect($fields);
@@ -43,12 +44,6 @@ trait Select {
 			
 			return $results;
 		}
-	}
-	
-	public function count() {
-		$sql = "SELECT".PHP_EOL."   COUNT(*) AS total".PHP_EOL."FROM ".$this->_tableAsAlias().$this->_joins().$this->_where();
-		$result = $this->execute($sql);
-		return $result->row['total'];
 	}
 	
 	private function single() {

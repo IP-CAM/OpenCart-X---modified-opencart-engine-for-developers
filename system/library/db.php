@@ -52,11 +52,11 @@ class DB {
 	}
 	
 	public static function getTotalQueries() {
-		return count(self::getLog());
+		return count(self::getExecutedQueries());
 	}
 	
 	public static function getLastQuery() {
-		if(!self::getLog()) {
+		if(!self::getExecutedQueries()) {
 			return 'No queries executed! Write "DB::enableLog();" before query execution.';
 		}
 		

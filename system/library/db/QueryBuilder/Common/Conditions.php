@@ -13,20 +13,6 @@ trait Conditions {
 		return $this;
 	}
 	
-	public function whereRaw($sql) {
-		$this->appendCondition($sql);
-		
-		return $this;
-	}
-	
-	public function whereIn($field, $keys) {
-		return $this->whereRaw($this->_field($field)." IN (".$this->implodeValues($keys).")");
-	}
-	
-	public function whereNotIn($keys) {
-		return $this->whereRaw($this->_field($field)." NOT IN (".$this->implodeValues($keys).")");
-	}
-	
 	public function orWhere($field, $operator = '=', $value = null) {
 		$sql = $this->parseInputConditions($field, $operator, $value);
 		
@@ -35,8 +21,32 @@ trait Conditions {
 		return $this;
 	}
 	
-	public function andWhere($field, $operator = '=', $value = null) {
-		return $this->where($field, $operator, $value);
+	public function whereRaw($sql) {
+		$this->appendCondition($sql);
+		
+		return $this;
+	}
+	
+	public function orWhereRaw($sql) {
+		$this->appendCondition($sql, " OR ");
+		
+		return $this;
+	}
+	
+	public function whereNull($field) {
+		return $this->whereRaw($this->_field($field)." IS NULL");
+	}
+	
+	public function whereNotNull($field) {
+		return $this->whereRaw($this->_field($field)." IS NOT NULL");
+	}
+	
+	public function whereIn($field, $keys) {
+		return $this->whereRaw($this->_field($field)." IN (".$this->implodeValues($keys).")");
+	}
+	
+	public function whereNotIn($keys) {
+		return $this->whereRaw($this->_field($field)." NOT IN (".$this->implodeValues($keys).")");
 	}
 	
 	public function find($keys) {
@@ -112,7 +122,7 @@ trait Conditions {
 	
 	private function implodeValues($values) {
 		for($i=0; $i<count($values); $i++) {
-			$values[$i] = "'".$this->escape($values[$i])."'";
+			$values[$i] = is_int($values[$i]) ? $values[$i] : "'".$this->escape($values[$i])."'";
 		}
 		
 		return implode(',', $values);

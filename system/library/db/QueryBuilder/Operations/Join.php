@@ -50,19 +50,15 @@ trait Join {
 			return " ON (".$this->_field($key1)."=".$this->_field($key2).")";
 		}
 		
-		if(is_array($key1) and is_null($key2)) {
-			return $this->arrayToJoinConditions($key1);
-		}
-		
-		return "";
-	}
-	
-	private function arrayToJoinConditions($arr) {
 		return "";
 	}
 	
 	private function _joins() {
-		return PHP_EOL.implode(PHP_EOL, $this->joins);
+		if($this->joins) {
+			return PHP_EOL.implode(PHP_EOL, $this->joins);
+		} else {
+			return "";
+		}
 	}
 	
 }

@@ -566,3 +566,62 @@ WHERE (`s`.`store_id`>'p.product_id')  OR  (`pi`.`product_id`='ps.price')
 ORDER BY `p`.`product_id` ASC
 LIMIT 15 in D:\Development\WebServers\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
 2016-12-15 14:59:07 - PHP Notice:  Trying to get property of non-object in D:\Development\WebServers\OpenServer\domains\opencart-x.com\system\library\db\QueryBuilder\Operations\Select.php on line 18
+2016-12-15 21:47:50 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE (`s`.`store_id`>'p.product_id')  OR  (`pi`.`product_id`='ps.price')
+ORDER' at line 9<br />Error No: 1064<br />SELECT
+   `p`.`product_id`,
+   `s`.`store_id`
+FROM `oc_product` AS `p`
+CROSS JOIN `oc_store` AS `s`
+LEFT OUTER JOIN `oc_product_image` AS `pi` USING (`product_id`)
+LEFT OUTER JOIN `oc_product_image` AS `pi2`
+RIGHT OUTER JOIN `oc_product_special` AS `ps` ON (`p`.`product_id`=`ps`.`product_id`)
+WHERE (`s`.`store_id`>'p.product_id')  OR  (`pi`.`product_id`='ps.price')
+ORDER BY `p`.`product_id` ASC
+LIMIT 15 in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-15 21:47:50 - PHP Notice:  Trying to get property of non-object in E:\OpenServer\domains\opencart-x.com\system\library\db\QueryBuilder\Operations\Select.php on line 18
+2016-12-15 22:02:14 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE (`s`.`store_id`>'p.product_id')  OR  (`pi`.`product_id`='ps.price')
+ORDER' at line 9<br />Error No: 1064<br />SELECT
+   `p`.`product_id`,
+   `s`.`store_id`
+FROM `oc_product` AS `p`
+CROSS JOIN `oc_store` AS `s`
+LEFT OUTER JOIN `oc_product_image` AS `pi` USING (`product_id`)
+LEFT OUTER JOIN `oc_product_image` AS `pi2`
+RIGHT OUTER JOIN `oc_product_special` AS `ps` ON (`p`.`product_id`=`ps`.`product_id`)
+WHERE (`s`.`store_id`>'p.product_id')  OR  (`pi`.`product_id`='ps.price')
+ORDER BY `p`.`product_id` ASC
+LIMIT 15 in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-15 22:02:14 - PHP Notice:  Trying to get property of non-object in E:\OpenServer\domains\opencart-x.com\system\library\db\QueryBuilder\Operations\Select.php on line 18
+2016-12-15 22:34:12 - PHP Notice:  Error: Unknown column 's.store_id' in 'field list'<br />Error No: 1054<br />SELECT
+   `p`.`product_id`,
+   `s`.`store_id`
+FROM `oc_product` AS `p`
+CROSS JOIN `oc_store`
+LEFT OUTER JOIN `oc_product_image` AS `pi` USING (`product_id`)
+RIGHT OUTER JOIN `oc_product_special` AS `ps` ON (`p`.`product_id`=`ps`.`product_id`)
+WHERE (`s`.`store_id`>'10')  OR  (`pi`.`product_id`='ps.price')
+ORDER BY `p`.`product_id` ASC
+LIMIT 15 in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-15 22:34:12 - PHP Notice:  Trying to get property of non-object in E:\OpenServer\domains\opencart-x.com\system\library\db\QueryBuilder\Operations\Select.php on line 18
+2016-12-15 22:34:32 - PHP Notice:  Error: Unknown column 'p.store_id' in 'field list'<br />Error No: 1054<br />SELECT
+   `p`.`product_id`,
+   `p`.`store_id`
+FROM `oc_product` AS `p`
+CROSS JOIN `oc_store`
+LEFT OUTER JOIN `oc_product_image` AS `pi` USING (`product_id`)
+RIGHT OUTER JOIN `oc_product_special` AS `ps` ON (`p`.`product_id`=`ps`.`product_id`)
+WHERE (`p`.`store_id`>'10')  OR  (`pi`.`product_id`='ps.price')
+ORDER BY `p`.`product_id` ASC
+LIMIT 15 in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-15 22:34:32 - PHP Notice:  Trying to get property of non-object in E:\OpenServer\domains\opencart-x.com\system\library\db\QueryBuilder\Operations\Select.php on line 18
+2016-12-15 22:34:51 - PHP Notice:  Error: Unknown column 's.store_id' in 'field list'<br />Error No: 1054<br />SELECT
+   `p`.`product_id`,
+   `s`.`store_id`
+FROM `oc_product` AS `p`
+CROSS JOIN `oc_store`
+LEFT OUTER JOIN `oc_product_image` AS `pi` USING (`product_id`)
+RIGHT OUTER JOIN `oc_product_special` AS `ps` ON (`p`.`product_id`=`ps`.`product_id`)
+WHERE (`s`.`store_id`>'10')  OR  (`pi`.`product_id`='ps.price')
+ORDER BY `p`.`product_id` ASC
+LIMIT 15 in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-15 22:34:51 - PHP Notice:  Trying to get property of non-object in E:\OpenServer\domains\opencart-x.com\system\library\db\QueryBuilder\Operations\Select.php on line 18
