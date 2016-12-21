@@ -5,48 +5,36 @@ trait Conditions {
 	
 	private $conditions_sql = '';
 	
-	public function where($field, $operator = '=', $value = null) {
-		$sql = $this->parseInputConditions($field, $operator, $value);
+	public function where($conditions) {
+		$args = func_get_args();
+		
+		$sql = $this->createWhereSql($args);
 		
 		$this->appendCondition($sql);
 		
 		return $this;
 	}
 	
-	public function orWhere($field, $operator = '=', $value = null) {
-		$sql = $this->parseInputConditions($field, $operator, $value);
+	public function orWhere($conditions) {
+		$args = func_get_args();
 		
-		$this->appendCondition($sql, " OR ");
+		$sql = $this->createWhereSql($args);
 		
-		return $this;
-	}
-	
-	public function whereRaw($sql) {
-		$this->appendCondition($sql);
+		$this->appendCondition($sql, "OR");
 		
 		return $this;
 	}
 	
-	public function orWhereRaw($sql) {
-		$this->appendCondition($sql, " OR ");
+	private function createWhereSql($args) {
+		if(count($args) > 1) {
+			$sql = $this->parseSingleCondition($args[0], $args[1]);
+		} else if(is_array($args[0])) {
+			$sql = $this->parseConditions($args[0]);
+		} else {
+			$sql = $args[0];
+		}
 		
-		return $this;
-	}
-	
-	public function whereNull($field) {
-		return $this->whereRaw($this->_field($field)." IS NULL");
-	}
-	
-	public function whereNotNull($field) {
-		return $this->whereRaw($this->_field($field)." IS NOT NULL");
-	}
-	
-	public function whereIn($field, $keys) {
-		return $this->whereRaw($this->_field($field)." IN (".$this->implodeValues($keys).")");
-	}
-	
-	public function whereNotIn($keys) {
-		return $this->whereRaw($this->_field($field)." NOT IN (".$this->implodeValues($keys).")");
+		return $sql;
 	}
 	
 	public function find($keys) {
@@ -81,51 +69,113 @@ trait Conditions {
 		return $this;
 	}
 	
-	private function parseInputConditions($field, $operator, $value) {
-		$sql = '';
+	private function parseSingleCondition($field, $value) {
+		$field = trim($field);
 		
-		if(is_array($field)) {
-			$tmp = array();
+		$operator = $this->determineOperator($field, $value);
+		$field = $this->getConditionField($field);
+		$value = $this->parseConditionValue($value, $operator);
+		
+		return $field." ".$operator." ".$value;
+	}
+	
+	private function getConditionField($field) {
+		$data = explode(' ', $field, 2);
+		return $this->_field($data[0]);
+	}
+	
+	private function parseConditionValue($value) {
+		if(is_int($value) or is_float($value)) {
+			return $value;
+		}
+		
+		if(is_array($value)) {
+			$values = array();
 			
-			foreach($field as $cond) {				
-				if(count($cond) == 2) {
-					$tmp[] = $this->fieldToValue($cond[0], '=', $cond[1]);
+			foreach($value as $val) {
+				if(is_int($val) or is_float($val)) {
+					$values[] = $val;
 				} else {
-					$tmp[] = $this->fieldToValue($cond[0], $cond[1], $cond[2]);
+					$values[] = "'".$this->escape($val)."'";
 				}
 			}
 			
-			$sql = implode(" AND ", $tmp);
-		} else {
-			if(is_null($value)) {
-				$value = $operator;
-				$operator = '=';
+			return "(".implode(",", $values).")";
+		}
+		
+		if(is_null($value)) {
+			return "NULL";
+		}
+		
+		return "'".$this->escape($value)."'";
+	}
+	
+	private function determineOperator($field, $value) {
+		$operator = "=";
+		
+		if(strpos($field, ' ') !== false) {
+			$data = explode(' ', $field, 2);
+			$operator = trim($data[1]);
+		}
+		
+		if(is_array($value)) {
+			if($operator == "!=") {
+				return "NOT IN";
+			} else {
+				return "IN";
+			}
+		}
+		
+		if(is_null($value)) {
+			if($operator == "!=") {
+				return "IS NOT";
+			} else {
+				return "IS";
+			}
+		}
+		
+		return $operator;
+	}
+	
+	private function parseConditions($conditions) {
+		$sql = "";
+		
+		$delimiter = "";
+		
+		foreach($conditions as $field => $value) {				
+			if(is_int($field)) {
+				if(trim(strtoupper($value)) == "OR") {
+					$delimiter = " OR ";
+					continue;
+				}
+				
+				if(is_string($value)) {
+					$sql .= $delimiter.$value;
+				}
+			} else {
+				$sql .= $delimiter.$this->parseSingleCondition($field, $value);
 			}
 			
-			$sql = $this->fieldToValue($field, $operator, $value);
+			$delimiter = " AND ";
+		}
+		
+		if(count($conditions > 1)) {
+			$sql = "(".$sql.")";
 		}
 		
 		return $sql;
 	}
 	
-	private function appendCondition($condition, $operator = 'AND') {
+	private function appendCondition($condition, $operator = "AND") {
 		if(!$this->conditions_sql and $condition) {
-			$this->conditions_sql = PHP_EOL."WHERE (".$condition.")";
+			$this->conditions_sql = PHP_EOL."WHERE ".$condition;
 		} else {
-			$this->conditions_sql .= " ".$operator." (".$condition.")";
+			$this->conditions_sql .= " ".$operator." ".$condition;
 		}
 	}
 	
 	private function _where() {
 		return $this->conditions_sql;
-	}
-	
-	private function implodeValues($values) {
-		for($i=0; $i<count($values); $i++) {
-			$values[$i] = is_int($values[$i]) ? $values[$i] : "'".$this->escape($values[$i])."'";
-		}
-		
-		return implode(',', $values);
 	}
 	
 }

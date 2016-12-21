@@ -43,11 +43,19 @@ trait Join {
 	
 	private function parseJoinConditions($key1, $key2) {
 		if(is_string($key1) and is_null($key2)) {
-			return " USING (`".$this->escape($key1)."`)";
+			if(strpos($key1, '.') !== false) {
+				return " ON ".$key1;
+			} else {
+				return " USING (`".$this->escape($key1)."`)";
+			}
 		}
 		
 		if(is_string($key1) and is_string($key2)) {
-			return " ON (".$this->_field($key1)."=".$this->_field($key2).")";
+			return " ON ".$this->_field($key1)." = ".$this->_field($key2);
+		}
+		
+		if(is_array($key1)) {
+			return " ON ".$this->parseConditions($key1);
 		}
 		
 		return "";

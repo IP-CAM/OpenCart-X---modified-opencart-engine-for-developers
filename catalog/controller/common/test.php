@@ -5,7 +5,21 @@ class ControllerCommonTest extends Controller {
 		
 		DB::enableLog();
 		
-		echo DB::table('product')->where('product_id', '>', 30)->sum('product_id');
+		DB::table('product p')
+			->crossJoin('store s')
+			->leftJoin('product_filter pf', 'product_id')
+			->leftJoin('product_image pi', 'pi.product_id', 'p.product_id')
+			->rightJoin('product_option po', 'po.product_id = p.product_id')
+			->join('product_description pd', ['pd.product_id = p.product_id', 'pd.language_id' => 1])
+			->where('p.model', 'rabbit')
+			->where([
+				'p.product_id' => [3,5],
+				'p.model' => null,
+				'OR',
+				'p.ean >' => 10
+			])
+			->orWhere('p.product_id <=', 100)
+			->count();
 		
 		/*
 		DB::table('product p')

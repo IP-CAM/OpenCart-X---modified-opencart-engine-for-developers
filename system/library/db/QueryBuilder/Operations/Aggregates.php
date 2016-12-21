@@ -4,7 +4,7 @@ namespace db\QueryBuilder\Operations;
 trait Aggregates {
 	
 	public function count() {
-		return $this->selectAggregate("COUNT(*)");
+		return (int)$this->selectAggregate("COUNT(*)");
 	}
 	
 	public function max($field) {

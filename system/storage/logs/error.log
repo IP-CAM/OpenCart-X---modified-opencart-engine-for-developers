@@ -625,3 +625,25 @@ WHERE (`s`.`store_id`>'10')  OR  (`pi`.`product_id`='ps.price')
 ORDER BY `p`.`product_id` ASC
 LIMIT 15 in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
 2016-12-15 22:34:51 - PHP Notice:  Trying to get property of non-object in E:\OpenServer\domains\opencart-x.com\system\library\db\QueryBuilder\Operations\Select.php on line 18
+2016-12-21 22:13:15 - PHP Warning:  implode() expects at most 2 parameters, 3 given in E:\OpenServer\domains\opencart-x.com\system\library\db\QueryBuilder\Common\Conditions.php on line 43
+2016-12-21 22:13:16 - PHP Notice:  Error: Unknown column 'oc_product.' in 'where clause'<br />Error No: 1054<br />SELECT
+   COUNT(*) AS total
+FROM `oc_product`
+WHERE (`oc_product`.`` = 30) in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-21 22:13:16 - PHP Notice:  Trying to get property of non-object in E:\OpenServer\domains\opencart-x.com\system\library\db\QueryBuilder\Operations\Aggregates.php on line 29
+2016-12-21 22:33:24 - PHP Notice:  Error: Unknown column 'la' in 'where clause'<br />Error No: 1054<br />SELECT
+   COUNT(*) AS total
+FROM `oc_product`
+WHERE `oc_product`.`product_id` = la in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-21 22:33:24 - PHP Notice:  Trying to get property of non-object in E:\OpenServer\domains\opencart-x.com\system\library\db\QueryBuilder\Operations\Aggregates.php on line 29
+2016-12-22 1:12:41 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`pd`.`language_id` = 1)
+WHERE `p`.`model` = 'rabbit' AND (`p`.`product_id` IN (' at line 8<br />Error No: 1064<br />SELECT
+   COUNT(*) AS total
+FROM `oc_product` AS `p`
+CROSS JOIN `oc_store` AS `s`
+LEFT OUTER JOIN `oc_product_filter` AS `pf` USING (`product_id`)
+LEFT OUTER JOIN `oc_product_image` AS `pi` ON `pi`.`product_id`=`p`.`product_id`
+RIGHT OUTER JOIN `oc_product_option` AS `po` ON po.product_id = p.product_id
+INNER JOIN `oc_product_description` AS `pd` ON (pd.product_id = p.product_id`pd`.`language_id` = 1)
+WHERE `p`.`model` = 'rabbit' AND (`p`.`product_id` IN (3,5) AND `p`.`model` IS NULL OR `p`.`ean` > 10) OR `p`.`product_id` <= 100 in E:\OpenServer\domains\opencart-x.com\system\library\db\mysqli.php on line 41
+2016-12-22 1:12:41 - PHP Notice:  Trying to get property of non-object in E:\OpenServer\domains\opencart-x.com\system\library\db\QueryBuilder\Operations\Aggregates.php on line 29
