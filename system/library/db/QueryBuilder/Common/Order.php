@@ -3,22 +3,42 @@ namespace db\QueryBuilder\Common;
 
 trait Order {
 	
-	private $sortField;
-	private $sortOrder = "ASC";
+	private $sortFields = array();
 	
 	public function sortBy($field, $order = "ASC") {
-		$this->sortField = $field;
-		$this->sortOrder = strtoupper($order);
+		if(is_array($field)) {
+			foreach($field as $field_name => $order) {
+				$this->sortBy($field_name, $order);
+			}			
+		} else {
+			$this->sortFields[$field] = $order;
+		}
 		
 		return $this;
 	}
 	
-	private function _order() {
-		if(!$this->sortField) {
-			$this->sortField = $this->_field($this->getPrimaryKey());
+	private function sortOrder($order) {
+		$order = strtoupper($order);
+		
+		if($order != "DESC") {
+			$order = "ASC";
 		}
 		
-		return PHP_EOL."ORDER BY ".$this->sortField." ".$this->sortOrder;
+		return $order;
+	}
+	
+	private function _order() {
+		if($this->sortFields) {
+			$fields = array();
+			
+			foreach($this->sortFields as $field => $order) {
+				$fields[] = $this->_field($field)." ".$this->sortOrder($order);
+			}
+			
+			return PHP_EOL."ORDER BY ".implode(", ", $fields);
+		}
+		
+		return "";
 	}
 	
 }

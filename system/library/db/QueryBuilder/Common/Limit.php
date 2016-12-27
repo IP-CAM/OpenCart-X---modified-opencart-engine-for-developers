@@ -4,7 +4,7 @@ namespace db\QueryBuilder\Common;
 trait Limit {
 	
 	private $limitOffset;
-	private $limitCount = 15;
+	private $limitCount;
 	
 	public function limit($count) {
 		$this->limitCount = intval($count);

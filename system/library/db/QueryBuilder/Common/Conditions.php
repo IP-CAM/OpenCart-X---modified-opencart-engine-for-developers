@@ -38,6 +38,10 @@ trait Conditions {
 	}
 	
 	public function find($keys) {
+		if(!is_array($keys)) {
+			$this->limit(1);
+		}
+		
 		if(is_int($keys) or is_string($keys)) {
 			$this->where($this->getPrimaryKey(), $keys);
 		} else {

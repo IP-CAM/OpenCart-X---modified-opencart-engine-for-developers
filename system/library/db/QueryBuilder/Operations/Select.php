@@ -13,6 +13,12 @@ trait Select {
 		
 		$result = $this->execute($sql);
 		
+		// return value
+		if(is_string($fields)) {
+			return $this->getFieldValue($fields, $result);
+		}
+		
+		// return rows
 		if($this->single()) {
 			return $result->row;
 		} else {
@@ -20,29 +26,21 @@ trait Select {
 		}
 	}
 	
-	public function all($fields = null) {
-		$this->limit(0);
-		
-		return $this->get($fields);
-	}
-	
-	public function value($field) {
-		$rows = $this->get($field);
-		
+	private function getFieldValue($field, $result) {
 		if($this->single()) {
-			if(isset($rows[$field])) {
-				return $rows[$field];
+			if(isset($result->row[$field])) {
+				return $result->row[$field];
 			} else {
 				return null;
 			}
 		} else {
-			$results = array();
+			$values = array();
 			
-			foreach($rows as $row) {
-				$results[] = $row[$field];
+			foreach($result->rows as $row) {
+				$values[] = $row[$field];
 			}
 			
-			return $results;
+			return $values;
 		}
 	}
 	
